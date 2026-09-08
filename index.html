@@ -4,483 +4,1943 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>حلم وهدف | خدمات محطات الوقود</title>
+<meta name="description" content="حلم وهدف للخدمات البترولية — تصميم وإنشاء وتجهيز وصيانة محطات الوقود في المملكة العربية السعودية.">
+<link rel="canonical" href="https://hulmwahadaf.com.sa/">
+<meta name="theme-color" content="#131210">
+<meta name="robots" content="index,follow">
+
+<!-- link preview (WhatsApp, X, LinkedIn) -->
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="حلم وهدف">
+<meta property="og:locale"      content="ar_SA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url"         content="https://hulmwahadaf.com.sa/">
+<meta property="og:title"       content="حلم وهدف | تصميم وإنشاء وصيانة محطات الوقود">
+<meta property="og:description" content="من دراسة الموقع والتصميم الهندسي إلى تركيب المضخات والخزانات وعقود الصيانة — شريك واحد لمحطتك من أول مخطط حتى التشغيل.">
+<!-- TODO: add og.jpg (1200×630) to the repo root for a preview image -->
+<meta property="og:image"       content="https://hulmwahadaf.com.sa/og.jpg">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="حلم وهدف | خدمات محطات الوقود">
+<meta name="twitter:description" content="تصميم وإنشاء وتجهيز وصيانة محطات الوقود في المملكة العربية السعودية.">
+<meta name="twitter:image"       content="https://hulmwahadaf.com.sa/og.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23131210'/%3E%3Crect x='20' y='4' width='8' height='8' fill='%23E5481F'/%3E%3Crect x='6' y='14' width='14' height='2.4' fill='%23F2EFE7'/%3E%3Crect x='6' y='19' width='20' height='2.4' fill='%23F2EFE7'/%3E%3Crect x='6' y='24' width='10' height='2.4' fill='%23F2EFE7'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --sand:#F2E9D8;
-    --sand-deep:#EADFC7;
-    --card:#FBF6EA;
-    --charcoal:#1F1A15;
-    --ink:#171310;
-    --copper:#B06A2E;
-    --copper-dark:#8A5122;
-    --ember:#7A2E1D;
-    --line:#D8C9A8;
-    --line-dark:#3A3128;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--sand);
-    color:var(--charcoal);
-    font-family:'Tajawal',sans-serif;
-    line-height:1.7;
-  }
-  h1,h2,h3,h4{
-    font-family:'El Messiri',serif;
-    font-weight:700;
-    margin:0 0 .4em;
-    color:var(--ink);
-  }
-  p{margin:0 0 1em;}
-  a{color:inherit;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
-  img{max-width:100%;display:block;}
+/* ============================================================
+   حلم وهدف — Technical Bureau design system
+   Paper + ink + signal orange. Hairline grid. Spec-sheet type.
+   ============================================================ */
+:root{
+  --paper:#F2EFE7;
+  --paper-2:#E9E5DA;
+  --paper-3:#DFDACD;
+  --ink:#131210;
+  --ink-2:#2B2823;
+  --muted:#6E6A60;
+  --signal:#E5481F;
+  --signal-ink:#B93714;
+  --steel:#22333F;
+  --line:rgba(19,18,16,.16);
+  --line-soft:rgba(19,18,16,.09);
+  --onsignal:#FFF6F2;
 
-  /* ---------- editor chrome ---------- */
-  .editor-banner{
-    position:sticky;top:0;z-index:100;
-    background:var(--ink);color:var(--sand);
-    font-size:14px;padding:10px 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  }
-  .editor-banner strong{color:#E7B978;}
-  .editor-banner .actions{display:flex;gap:10px;align-items:center;}
-  .editor-banner button{
-    font-family:'Tajawal',sans-serif;font-size:13px;font-weight:700;
-    background:var(--copper);color:#fff;border:none;border-radius:6px;
-    padding:8px 14px;cursor:pointer;
-  }
-  .editor-banner button.secondary{background:transparent;border:1px solid #6b6155;color:var(--sand);}
-  .editor-banner button:hover{opacity:.9;}
-  .editor-banner .close-x{background:none;border:none;color:var(--sand);font-size:18px;cursor:pointer;padding:0 4px;}
+  --f-ar:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif;
+  --f-en:'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,monospace;
 
-  body:not(.edit-mode) .drag-handle,
-  body:not(.edit-mode) .section-toolbar,
-  body:not(.edit-mode) .dropzone-hint{display:none !important;}
-  body.edit-mode .editable-section{outline:1px dashed transparent;transition:outline-color .15s;}
-  body.edit-mode .editable-section:hover{outline-color:var(--copper);}
-  body.edit-mode [contenteditable="true"]:hover{outline:1px dashed var(--copper-dark);outline-offset:2px;cursor:text;}
-  body.edit-mode [contenteditable="true"]:focus{outline:2px solid var(--copper);outline-offset:2px;background:rgba(176,106,46,.06);}
+  --gut:clamp(18px,4vw,64px);
+  --maxw:1440px;
+  --rule:1px solid var(--line);
+}
 
-  .editable-section{position:relative;}
-  .section-toolbar{
-    position:absolute;top:10px;left:10px;z-index:20;
-    display:flex;gap:6px;
-  }
-  .drag-handle, .hide-btn{
-    width:34px;height:34px;border-radius:8px;border:1px solid var(--line);
-    background:var(--card);display:flex;align-items:center;justify-content:center;
-    cursor:grab;box-shadow:0 2px 6px rgba(0,0,0,.12);font-size:16px;color:var(--copper-dark);
-  }
-  .hide-btn{cursor:pointer;font-size:14px;}
-  .editable-section.dragging{opacity:.4;}
-  .editable-section.drag-over{outline:2px solid var(--copper);}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-ar);font-size:16px;line-height:1.72;
+  font-feature-settings:"kern","liga";
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+html[lang="en"] body{font-family:var(--f-en);}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.06;letter-spacing:-.015em;}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{letter-spacing:0;line-height:1.24;}
+p{margin:0;}
+::selection{background:var(--signal);color:var(--onsignal);}
 
-  .dropzone{
-    position:relative;border:1.5px dashed var(--line-dark);border-radius:14px;
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
-    background:linear-gradient(135deg,#20190f,#150f0a);color:#C9BBA0;cursor:pointer;
-    min-height:260px;text-align:center;
-  }
-  .dropzone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .dropzone .dropzone-hint{position:relative;z-index:2;padding:20px;font-size:14px;}
-  .dropzone input[type=file]{display:none;}
+/* grain — kills the flat digital sheen */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
 
-  /* ---------- header ---------- */
-  header.site-header{
-    background:var(--sand);border-bottom:1px solid var(--line);
-    position:sticky;top:0;z-index:50;
-  }
-  body.edit-mode header.site-header{top:41px;}
-  .header-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px;}
-  .logo{display:flex;align-items:center;gap:10px;font-family:'El Messiri',serif;font-weight:700;font-size:22px;color:var(--ink);}
-  .logo .logo-mark{
-    width:38px;height:38px;border-radius:9px;background:var(--copper);
-    display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0;
-  }
-  nav.main-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-size:15px;font-weight:500;}
-  nav.main-nav a{text-decoration:none;}
-  .btn{
-    display:inline-block;font-family:'Tajawal',sans-serif;font-weight:700;font-size:15px;
-    padding:12px 26px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;
-  }
-  .btn-primary{background:var(--copper);color:#fff;}
-  .btn-primary:hover{background:var(--copper-dark);}
-  .btn-ghost{background:transparent;border:1px solid var(--line-dark);color:var(--ink);}
-  @media (max-width:820px){ nav.main-nav{display:none;} }
+/* ---------- layout primitives ---------- */
+.shell{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);}
+.rule-t{border-top:var(--rule);}
+.rule-b{border-bottom:var(--rule);}
 
-  /* ---------- hero ---------- */
-  .hero{padding:64px 0 40px;}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center;}
-  .hero-eyebrow{color:var(--copper-dark);font-weight:700;font-size:15px;margin-bottom:10px;}
-  .hero h1{font-size:44px;line-height:1.28;}
-  .hero p.lead{font-size:17px;max-width:46ch;color:#4a3f33;}
-  .hero-ctas{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
-  .hero-visual{aspect-ratio:4/3.4;}
-  .stat-strip{
-    margin-top:52px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    padding:26px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  }
-  .stat-strip .stat b{display:block;font-family:'El Messiri',serif;font-size:30px;color:var(--copper-dark);}
-  .stat-strip .stat span{font-size:14px;color:#54493c;}
-  @media (max-width:820px){
-    .hero .wrap{grid-template-columns:1fr;}
-    .hero h1{font-size:34px;}
-    .stat-strip{grid-template-columns:repeat(2,1fr);}
-  }
+.mono{
+  font-family:var(--f-mono);font-size:11px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+html[dir="rtl"] .mono{letter-spacing:.04em;}
+.mono .idx{color:var(--signal);}
 
-  /* ---------- section intro ---------- */
-  .section-intro{max-width:60ch;margin-bottom:40px;}
-  .section-intro p.kicker{color:var(--copper-dark);font-weight:700;margin-bottom:8px;font-size:15px;}
-  .section-intro h2{font-size:32px;}
+/* section head: [ 01 ] ——— label */
+.sec-head{
+  display:flex;align-items:center;gap:16px;
+  padding-block:22px;border-bottom:var(--rule);margin-bottom:clamp(34px,5vw,72px);
+}
+.sec-head .bar{flex:1;height:1px;background:var(--line);}
 
-  section.editable-section{padding:74px 0;}
-  section.alt-bg{background:var(--sand-deep);}
+.eyebrow{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--signal);display:inline-flex;align-items:center;gap:9px;
+}
+html[dir="rtl"] .eyebrow{letter-spacing:.03em;font-size:12px;}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--signal);}
 
-  /* ---------- services ---------- */
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .service-card{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 26px;
-  }
-  .service-card .icon{
-    width:46px;height:46px;border-radius:10px;background:var(--ink);color:#E7B978;
-    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-  }
-  .service-card h3{font-size:19px;margin-bottom:8px;}
-  .service-card p{font-size:14.5px;color:#5a4d3f;margin:0;}
-  @media (max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:600px){.services-grid{grid-template-columns:1fr;}}
+.display{font-size:clamp(38px,6.6vw,104px);font-weight:700;letter-spacing:-.03em;}
+html[dir="rtl"] .display{letter-spacing:-.005em;font-size:clamp(34px,5.9vw,92px);}
+.h2{font-size:clamp(28px,3.9vw,58px);letter-spacing:-.025em;}
+html[dir="rtl"] .h2{letter-spacing:0;}
+.lead{font-size:clamp(16px,1.35vw,20px);color:var(--ink-2);max-width:56ch;line-height:1.75;}
 
-  /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;}
-  .about-visual{aspect-ratio:1/1;}
-  .about-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px;}
-  .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;}
-  .about-list .tick{
-    width:22px;height:22px;border-radius:50%;background:var(--copper);color:#fff;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px;
-  }
-  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
+.section{padding-block:clamp(60px,8vw,132px);position:relative;}
 
-  /* ---------- why / stats dark ---------- */
-  .why{background:var(--ink);color:var(--sand);}
-  .why .section-intro h2, .why .section-intro p.kicker{color:var(--sand);}
-  .why .section-intro p.kicker{color:#E7B978;}
-  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:14px;overflow:hidden;}
-  .why-card{background:#221A12;padding:30px 26px;}
-  .why-card b{display:block;font-family:'El Messiri',serif;font-size:26px;color:#E7B978;margin-bottom:6px;}
-  .why-card span{font-size:14px;color:#C9BBA0;}
-  @media (max-width:820px){.why-grid{grid-template-columns:1fr;}}
+/* registration crosshair marks — print bleed cue */
+.regmark{position:absolute;width:13px;height:13px;opacity:.4;pointer-events:none;}
+.regmark::before,.regmark::after{content:'';position:absolute;background:var(--ink);}
+.regmark::before{inset-inline-start:6px;top:0;width:1px;height:100%;}
+.regmark::after{top:6px;inset-inline-start:0;height:1px;width:100%;}
 
-  /* ---------- contact ---------- */
-  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;}
-  .contact-info .info-row{display:flex;gap:12px;margin-bottom:18px;font-size:15px;}
-  .contact-info .info-row .k{color:var(--copper-dark);font-weight:700;min-width:70px;}
-  form.contact-form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;display:grid;gap:16px;}
-  form.contact-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  form.contact-form label{font-size:13.5px;font-weight:700;color:#5a4d3f;margin-bottom:5px;display:block;}
-  form.contact-form input, form.contact-form textarea{
-    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 13px;
-    font-family:'Tajawal',sans-serif;font-size:14.5px;background:#fff;color:var(--charcoal);
-  }
-  form.contact-form textarea{min-height:110px;resize:vertical;}
-  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;} form.contact-form .row2{grid-template-columns:1fr;}}
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;background:var(--paper);
+  border-bottom:var(--rule);
+}
+body.admin-on .site-header{top:var(--adminbar-h,52px);}
+.hdr{display:flex;align-items:center;gap:clamp(14px,3vw,40px);height:72px;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.01em;flex-shrink:0;}
+.brand .mark{
+  width:34px;height:34px;flex-shrink:0;background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;font-family:var(--f-mono);font-size:12px;font-weight:600;
+  position:relative;
+}
+.brand .mark::after{content:'';position:absolute;inset-inline-end:-4px;top:-4px;width:8px;height:8px;background:var(--signal);}
+.nav{display:flex;gap:clamp(14px,2vw,30px);margin-inline-start:auto;}
+.nav a{
+  font-size:14px;font-weight:500;position:relative;padding-block:6px;color:var(--ink-2);
+}
+.nav a::after{
+  content:'';position:absolute;inset-inline-start:0;bottom:0;width:0;height:1.5px;
+  background:var(--signal);transition:width .32s cubic-bezier(.2,.7,.3,1);
+}
+.nav a:hover::after{width:100%;}
+.hdr-end{display:flex;align-items:center;gap:10px;margin-inline-start:auto;}
+.nav + .hdr-end{margin-inline-start:0;}
 
-  /* ---------- footer ---------- */
-  footer.site-footer{background:var(--ink);color:#C9BBA0;padding:52px 0 22px;font-size:14px;}
-  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
-  .footer-grid h4{color:var(--sand);font-size:16px;margin-bottom:14px;font-family:'El Messiri',serif;}
-  .footer-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
-  .footer-grid a{text-decoration:none;}
-  .footer-bottom{border-top:1px solid var(--line-dark);padding-top:20px;text-align:center;font-size:13px;color:#8a7c68;}
-  @media (max-width:820px){.footer-grid{grid-template-columns:1fr;}}
+.langbtn{
+  font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;
+  border:var(--rule);background:transparent;padding:8px 12px;cursor:pointer;
+  display:flex;align-items:center;gap:7px;transition:background .2s,color .2s;
+}
+.langbtn:hover{background:var(--ink);color:var(--paper);}
+.langbtn .on{color:var(--signal);}
+.langbtn:hover .on{color:var(--paper);}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;
+  padding:13px 24px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+  cursor:pointer;transition:background .22s,color .22s,transform .22s;position:relative;
+}
+.btn:hover{background:var(--signal);border-color:var(--signal);color:var(--onsignal);}
+.btn .arw{display:inline-block;transition:transform .25s;}
+html[dir="rtl"] .btn .arw{transform:scaleX(-1);}
+.btn:hover .arw{transform:translateX(4px);}
+html[dir="rtl"] .btn:hover .arw{transform:scaleX(-1) translateX(4px);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+@media(max-width:900px){.nav{display:none;}}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(44px,6vw,92px) 0;position:relative;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(26px,4vw,64px);align-items:end;}
+.hero h1{margin-block:18px 26px;}
+.hero h1 .wordmark{
+  display:inline-block;position:relative;color:var(--signal);
+}
+.hero h1 .wordmark::after{
+  content:'';position:absolute;inset-inline-start:0;bottom:.08em;width:100%;height:.055em;background:var(--signal);opacity:.32;
+}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+
+.hero-figure{position:relative;aspect-ratio:4/5;min-height:320px;}
+.hero-figure .frame{
+  position:absolute;inset:0;border:var(--rule);background:var(--paper-2);overflow:hidden;
+}
+.hero-figure .tag{
+  position:absolute;bottom:0;inset-inline-start:0;background:var(--signal);color:var(--onsignal);
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:9px 14px;z-index:3;
+}
+html[dir="rtl"] .hero-figure .tag{letter-spacing:.02em;font-size:11.5px;font-family:var(--f-ar);font-weight:600;}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--rule);margin-top:clamp(40px,6vw,86px);}
+.stat{padding:26px 20px 30px;border-inline-end:var(--rule);}
+.stat:last-child{border-inline-end:none;}
+.stat b{
+  display:block;font-size:clamp(34px,4.4vw,62px);font-weight:700;line-height:1;
+  letter-spacing:-.035em;margin-bottom:10px;font-family:var(--f-en);
+}
+.stat span{font-size:13.5px;color:var(--muted);line-height:1.5;display:block;}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-figure{aspect-ratio:16/10;min-height:0;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stat:nth-child(2){border-inline-end:none;}
+  .stat:nth-child(-n+2){border-bottom:var(--rule);}
+}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding-block:15px;}
+.ticker-track{display:flex;gap:0;width:max-content;animation:slide 46s linear infinite;}
+html[dir="rtl"] .ticker-track{animation-direction:reverse;}
+.ticker-track span{
+  font-family:var(--f-mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding-inline:26px;display:inline-flex;align-items:center;gap:26px;white-space:nowrap;
+}
+html[dir="rtl"] .ticker-track span{font-family:var(--f-ar);letter-spacing:.02em;font-size:14px;font-weight:500;}
+.ticker-track span::after{content:'';width:5px;height:5px;background:var(--signal);flex-shrink:0;}
+@keyframes slide{to{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+
+/* ---------- services: index list, not cards ---------- */
+.svc-row{
+  display:grid;grid-template-columns:78px 1fr 1.05fr 44px;gap:clamp(14px,2.4vw,38px);
+  align-items:start;padding-block:clamp(24px,3vw,38px);border-bottom:var(--rule);
+  position:relative;transition:padding-inline .4s cubic-bezier(.2,.7,.3,1);
+}
+.svc-row::before{
+  content:"";position:absolute;inset:0;background:var(--signal);z-index:0;
+  transform:scaleY(0);transform-origin:bottom;transition:transform .42s cubic-bezier(.2,.7,.3,1);
+}
+.svc-row:hover::before{transform:scaleY(1);transform-origin:top;}
+.svc-row > *{position:relative;z-index:1;transition:color .3s;}
+.svc-row:hover{padding-inline:clamp(12px,1.6vw,26px);}
+.svc-row:hover,.svc-row:hover .svc-num,.svc-row:hover .svc-desc{color:var(--onsignal);}
+.svc-num{font-family:var(--f-mono);font-size:12.5px;font-weight:500;color:var(--signal);padding-top:9px;letter-spacing:.06em;}
+.svc-title{font-size:clamp(20px,2.15vw,31px);font-weight:700;letter-spacing:-.02em;line-height:1.22;}
+html[dir="rtl"] .svc-title{letter-spacing:0;line-height:1.4;}
+.svc-desc{font-size:15px;color:var(--muted);line-height:1.68;padding-top:5px;}
+.svc-ico{
+  width:44px;height:44px;border:1px solid currentColor;display:grid;place-items:center;
+  opacity:.4;transition:opacity .3s,background .3s;justify-self:end;
+}
+.svc-row:hover .svc-ico{opacity:1;background:rgba(255,255,255,.13);}
+@media(max-width:820px){
+  .svc-row{grid-template-columns:52px 1fr;gap:12px;}
+  .svc-desc{grid-column:2;padding-top:8px;}
+  .svc-ico{display:none;}
+}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(28px,4.5vw,78px);align-items:center;}
+.about-figure{position:relative;aspect-ratio:1/1.06;border:var(--rule);background:var(--paper-2);overflow:hidden;}
+.checklist{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:0;border-top:var(--rule);}
+.checklist li{
+  display:flex;gap:15px;align-items:flex-start;padding-block:17px;border-bottom:var(--rule);font-size:15.5px;
+}
+.checklist .tick{
+  font-family:var(--f-mono);font-size:11px;color:var(--signal);flex-shrink:0;padding-top:4px;letter-spacing:.05em;
+}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}.about-figure{aspect-ratio:16/11;}}
+
+/* ---------- numbers block (inverted slab) ---------- */
+.slab{background:var(--ink);color:var(--paper);}
+.slab .mono{color:rgba(242,239,231,.5);}
+.slab .sec-head{border-color:rgba(242,239,231,.2);}
+.slab .sec-head .bar{background:rgba(242,239,231,.2);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(242,239,231,.2);}
+.why-card{padding:clamp(28px,3.4vw,46px) clamp(18px,2.2vw,34px);border-inline-end:1px solid rgba(242,239,231,.2);}
+.why-card:last-child{border-inline-end:none;}
+.why-card .k{font-family:var(--f-mono);font-size:11px;color:var(--signal);letter-spacing:.16em;display:block;margin-bottom:20px;}
+html[dir="rtl"] .why-card .k{letter-spacing:.02em;font-size:12px;font-family:var(--f-ar);font-weight:600;}
+.why-card b{display:block;font-size:clamp(22px,2.5vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px;}
+html[dir="rtl"] .why-card b{letter-spacing:0;line-height:1.42;}
+.why-card span{font-size:14.5px;color:rgba(242,239,231,.6);line-height:1.65;}
+@media(max-width:820px){
+  .why-grid{grid-template-columns:1fr;}
+  .why-card{border-inline-end:none;border-bottom:1px solid rgba(242,239,231,.2);}
+}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:var(--rule);}
+.step{padding:30px clamp(16px,2vw,30px) 38px;border-inline-end:var(--rule);position:relative;}
+.step:last-child{border-inline-end:none;}
+.step .n{
+  font-family:var(--f-mono);font-size:clamp(40px,4.4vw,64px);font-weight:400;line-height:1;
+  color:var(--paper-3);margin-bottom:22px;display:block;letter-spacing:-.02em;
+}
+.step h3{font-size:19px;margin-bottom:11px;font-weight:600;}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.68;}
+.step::after{
+  content:"";position:absolute;top:0;inset-inline-start:0;width:0;height:3px;background:var(--signal);
+  transition:width .5s cubic-bezier(.2,.7,.3,1);
+}
+.step:hover::after{width:100%;}
+@media(max-width:900px){
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .step:nth-child(2n){border-inline-end:none;}
+  .step:nth-child(-n+2){border-bottom:var(--rule);}
+}
+@media(max-width:540px){
+  .steps{grid-template-columns:1fr;}
+  .step{border-inline-end:none;border-bottom:var(--rule);}
+}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+.gal .cell{position:relative;overflow:hidden;border:var(--rule);background:var(--paper-2);}
+.gal .cell:nth-child(1){grid-column:span 4;aspect-ratio:16/9;}
+.gal .cell:nth-child(n+2){grid-column:span 2;aspect-ratio:4/5;}
+@media(max-width:820px){
+  .gal{grid-template-columns:repeat(2,1fr);}
+  .gal .cell:nth-child(n){grid-column:span 1;aspect-ratio:1/1;}
+  .gal .cell:nth-child(1){grid-column:span 2;aspect-ratio:16/10;}
+}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,82px);}
+.info-row{display:flex;gap:18px;padding-block:16px;border-bottom:var(--rule);align-items:baseline;}
+.info-row .k{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);width:92px;flex-shrink:0;
+}
+html[dir="rtl"] .info-row .k{font-family:var(--f-ar);letter-spacing:0;font-size:13px;font-weight:600;}
+.info-row .v{font-size:16px;font-weight:500;}
+.form{display:grid;gap:20px;}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.field label{
+  display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px;
+}
+html[dir="rtl"] .field label{font-family:var(--f-ar);letter-spacing:0;font-size:13px;font-weight:600;}
+.field input,.field textarea{
+  width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);
+  background:transparent;border:none;border-bottom:1px solid var(--line);
+  padding:11px 2px;outline:none;transition:border-color .25s;
+}
+.field textarea{resize:vertical;min-height:104px;}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--signal);}
+.field input::placeholder,.field textarea::placeholder{color:rgba(110,106,96,.5);}
+.form-note{font-size:13px;color:var(--muted);}
+@media(max-width:820px){.contact-grid,.f2{grid-template-columns:1fr;}}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:var(--paper);padding-block:clamp(48px,6vw,84px) 26px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,4vw,60px);padding-bottom:44px;}
+.site-footer h4{font-size:19px;margin-bottom:15px;}
+.site-footer .fcol > .mono{margin-bottom:18px;display:block;color:rgba(242,239,231,.45);}
+.site-footer a{color:rgba(242,239,231,.66);font-size:14.5px;display:block;padding-block:6px;transition:color .2s;}
+.site-footer a:hover{color:var(--signal);}
+.site-footer p{color:rgba(242,239,231,.6);font-size:14.5px;line-height:1.7;}
+.foot-bar{
+  border-top:1px solid rgba(242,239,231,.16);padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.foot-bar .mono{color:rgba(242,239,231,.4);}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+
+/* the discreet login button */
+.login-dot{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;border:1px solid rgba(242,239,231,.22);color:rgba(242,239,231,.45);
+  padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .25s,color .25s;
+}
+html[dir="rtl"] .login-dot{font-family:var(--f-ar);letter-spacing:0;font-size:12.5px;}
+.login-dot:hover{border-color:var(--signal);color:var(--signal);}
+.login-dot .led{width:6px;height:6px;background:currentColor;border-radius:50%;flex-shrink:0;}
+
+/* ============================================================
+   ADMIN CHROME — only visible after login
+   ============================================================ */
+.adminbar{
+  position:fixed;top:0;inset-inline:0;z-index:200;background:var(--ink);color:var(--paper);
+  display:none;align-items:center;gap:14px;padding:0 16px;height:52px;
+  border-bottom:2px solid var(--signal);
+}
+body.admin-on .adminbar{display:flex;}
+body.admin-on{padding-top:52px;}
+.adminbar .ab-brand{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--signal);display:flex;align-items:center;gap:8px;flex-shrink:0;
+}
+html[dir="rtl"] .adminbar .ab-brand{font-family:var(--f-ar);letter-spacing:0;font-size:13px;font-weight:600;}
+.adminbar .ab-hint{font-size:13px;color:rgba(242,239,231,.62);flex:1;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ab-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.abtn{
+  font-size:13px;font-weight:600;padding:8px 14px;border:1px solid rgba(242,239,231,.28);
+  background:transparent;color:var(--paper);cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.abtn:hover{background:rgba(242,239,231,.1);}
+.abtn.primary{background:var(--signal);border-color:var(--signal);color:#fff;}
+.abtn.primary:hover{background:#c93d17;}
+.abtn.primary:disabled{opacity:.4;cursor:not-allowed;}
+.abtn.danger:hover{background:rgba(229,72,31,.2);border-color:var(--signal);}
+/* auto-translate toggle */
+.abtn.on{background:rgba(229,72,31,.18);border-color:var(--signal);color:#fff;}
+.abtn.on::before{content:'⇄';margin-inline-end:7px;color:var(--signal);}
+.abtn.working{opacity:.6;pointer-events:none;}
+.abtn.working::after{content:'…';margin-inline-start:6px;}
+.ab-lang{
+  display:flex;border:1px solid rgba(242,239,231,.28);overflow:hidden;flex-shrink:0;
+}
+.ab-lang button{
+  font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;
+  padding:8px 12px;background:transparent;border:none;color:rgba(242,239,231,.55);cursor:pointer;
+}
+.ab-lang button.on{background:var(--signal);color:#fff;}
+@media(max-width:860px){.adminbar .ab-hint{display:none;}.adminbar{gap:8px;}.abtn{padding:8px 10px;font-size:12px;}}
+
+/* dirty indicator */
+.dot-dirty{width:7px;height:7px;border-radius:50%;background:var(--signal);display:none;flex-shrink:0;}
+body.is-dirty .dot-dirty{display:block;}
+
+/* editable affordances */
+body.admin-on [data-edit]{
+  outline:1px dashed transparent;outline-offset:3px;transition:outline-color .15s,background .15s;
+  cursor:text;border-radius:1px;
+}
+body.admin-on [data-edit]:hover{outline-color:rgba(229,72,31,.55);}
+body.admin-on [data-edit]:focus{
+  outline:2px solid var(--signal);outline-offset:3px;background:rgba(229,72,31,.07);
+}
+body.admin-on .slab [data-edit]:focus,body.admin-on .site-footer [data-edit]:focus{background:rgba(229,72,31,.2);}
+
+/* section wrapper + toolbar */
+.blk{position:relative;}
+body.admin-on .blk{outline:1px dashed transparent;transition:outline-color .18s;}
+body.admin-on .blk:hover{outline-color:rgba(19,18,16,.25);}
+body.admin-on .slab.blk:hover{outline-color:rgba(242,239,231,.3);}
+.blk-tools{
+  position:absolute;top:10px;inset-inline-start:10px;z-index:40;
+  display:none;gap:5px;background:var(--ink);padding:5px;border:1px solid var(--signal);
+  box-shadow:0 6px 20px rgba(0,0,0,.28);
+}
+body.admin-on .blk-tools{display:flex;}
+.blk-tools button{
+  width:32px;height:32px;display:grid;place-items:center;background:transparent;border:none;
+  color:var(--paper);cursor:pointer;font-size:14px;line-height:1;transition:background .18s,color .18s;
+}
+.blk-tools button:hover{background:var(--signal);color:#fff;}
+.blk-tools .grab{cursor:grab;color:var(--signal);}
+.blk-tools .grab:active{cursor:grabbing;}
+.blk-tools button:disabled{opacity:.28;cursor:not-allowed;}
+.blk-tools button:disabled:hover{background:transparent;color:var(--paper);}
+
+.blk.dragging{opacity:.35;}
+.blk.drop-before{box-shadow:0 -4px 0 0 var(--signal);}
+.blk.drop-after{box-shadow:0 4px 0 0 var(--signal);}
+.blk.is-hidden{display:none;}
+body.admin-on .blk.is-hidden{
+  display:block;opacity:.34;filter:grayscale(1);position:relative;
+}
+body.admin-on .blk.is-hidden::after{
+  content:attr(data-hidden-label);position:absolute;top:14px;inset-inline-end:14px;z-index:41;
+  background:var(--ink);color:var(--signal);font-family:var(--f-mono);font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--signal);
+}
+
+/* image slots */
+.slot{position:absolute;inset:0;overflow:hidden;background:var(--paper-2);}
+.slot img{width:100%;height:100%;object-fit:cover;}
+.slot .ph{
+  position:absolute;inset:0;display:grid;place-items:center;color:var(--paper-3);
+  background:
+    repeating-linear-gradient(45deg,transparent 0 11px,rgba(19,18,16,.045) 11px 22px),
+    var(--paper-2);
+}
+.slot .ph svg{width:38%;max-width:150px;color:rgba(19,18,16,.22);}
+.gal .cell .slot .ph svg{width:52%;}
+body.admin-on .slot{cursor:pointer;}
+body.admin-on .slot::after{
+  content:attr(data-upload-label);position:absolute;inset-inline:0;bottom:0;z-index:5;
+  background:rgba(19,18,16,.86);color:var(--paper);font-size:12px;text-align:center;
+  padding:9px 8px;opacity:0;transition:opacity .2s;pointer-events:none;
+}
+body.admin-on .slot:hover::after{opacity:1;}
+.slot.drag-over{outline:3px solid var(--signal);outline-offset:-3px;}
+.slot .busy{
+  position:absolute;inset:0;z-index:8;display:grid;place-items:center;
+  background:rgba(19,18,16,.72);color:var(--paper);font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;
+}
+
+/* ============================================================
+   MODAL (login / settings)
+   ============================================================ */
+.overlay{
+  position:fixed;inset:0;z-index:300;background:rgba(19,18,16,.62);
+  backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px;
+}
+.overlay.open{display:flex;}
+.modal{
+  background:var(--paper);width:100%;max-width:432px;border:1px solid var(--ink);
+  box-shadow:14px 14px 0 rgba(19,18,16,.16);position:relative;
+  max-height:calc(100vh - 40px);overflow-y:auto;
+}
+.modal.wide{max-width:620px;}
+.modal-head{padding:26px 28px 20px;border-bottom:var(--rule);}
+.modal-head h3{font-size:23px;margin-bottom:7px;}
+.modal-head p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+.modal-body{padding:24px 28px 28px;display:grid;gap:18px;}
+.modal .field input{border:1px solid var(--line);padding:12px 13px;background:var(--paper);}
+.modal .field input:focus{border-color:var(--signal);}
+.modal-x{
+  position:absolute;top:14px;inset-inline-end:14px;background:transparent;border:none;
+  font-size:20px;cursor:pointer;color:var(--muted);line-height:1;padding:4px 8px;
+}
+.modal-x:hover{color:var(--signal);}
+.err{
+  font-size:13.5px;color:#fff;background:var(--signal);padding:11px 13px;display:none;
+}
+.err.show{display:block;}
+.modal .btn{width:100%;justify-content:center;}
+.mode-note{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);border:1px dashed var(--line);padding:10px 12px;line-height:1.6;
+}
+html[dir="rtl"] .mode-note{font-family:var(--f-ar);letter-spacing:0;font-size:12.5px;text-transform:none;}
+
+/* toast */
+.toast{
+  position:fixed;bottom:24px;inset-inline-start:50%;transform:translate(-50%,140%);
+  z-index:400;background:var(--ink);color:var(--paper);padding:14px 22px;
+  font-size:14px;font-weight:500;display:flex;align-items:center;gap:11px;
+  border-inline-start:3px solid var(--signal);transition:transform .38s cubic-bezier(.2,.8,.3,1);
+  max-width:calc(100vw - 40px);
+}
+.toast.show{transform:translate(-50%,0);}
+.toast.bad{border-inline-start-color:#E5481F;background:#7d2410;}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+body.admin-on .rv{opacity:1;transform:none;}
+
+@media print{.adminbar,.overlay,.toast,.blk-tools,.login-dot{display:none !important;}}
 </style>
 </head>
-<body class="edit-mode">
+<body>
 
-  <div class="editor-banner">
-    <div>الصفحة قابلة للتعديل: <strong>انقر على أي نص لتحريره</strong>، واسحب أيقونة (⠿) لتغيير ترتيب الأقسام.</div>
-    <div class="actions">
-      <button type="button" onclick="toggleEditMode()" id="editToggleBtn">إيقاف وضع التحرير</button>
-      <button type="button" class="secondary" onclick="downloadPage()">تنزيل النسخة الحالية</button>
-      <button type="button" class="close-x" onclick="this.closest('.editor-banner').style.display='none'">✕</button>
+<!-- ============================================================
+     ADMIN BAR — hidden until the manager logs in
+     ============================================================ -->
+<div class="adminbar" id="adminbar">
+  <span class="ab-brand"><span class="dot-dirty" id="dirtyDot"></span><span data-i18n="ab.brand">وضع التحرير</span></span>
+  <span class="ab-hint" data-i18n="ab.hint">انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها</span>
+  <div class="ab-lang" id="abLang">
+    <button type="button" data-setlang="ar">ع</button>
+    <button type="button" data-setlang="en">EN</button>
+  </div>
+  <div class="ab-actions">
+    <button type="button" class="abtn" id="btnTr" data-i18n="ab.tr">ترجمة تلقائية</button>
+    <button type="button" class="abtn" id="btnTrAll" data-i18n="ab.trall">ترجم الباقي</button>
+    <button type="button" class="abtn" id="btnUndo" title="Undo">↺</button>
+    <button type="button" class="abtn" id="btnReset" data-i18n="ab.reset">استرجاع الأصل</button>
+    <button type="button" class="abtn" id="btnExport" data-i18n="ab.export">تنزيل نسخة</button>
+    <button type="button" class="abtn primary" id="btnSave" data-i18n="ab.save">حفظ</button>
+    <button type="button" class="abtn danger" id="btnLogout" data-i18n="ab.logout">خروج</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="shell hdr">
+    <a href="#top" class="brand">
+      <span class="mark" data-edit="brand.mark">حه</span>
+      <span data-edit="brand.name">حلم وهدف</span>
+    </a>
+    <nav class="nav">
+      <a href="#services" data-edit="nav.services">الخدمات</a>
+      <a href="#about" data-edit="nav.about">عن الشركة</a>
+      <a href="#process" data-edit="nav.process">آلية العمل</a>
+      <a href="#work" data-edit="nav.work">أعمالنا</a>
+      <a href="#contact" data-edit="nav.contact">تواصل</a>
+    </nav>
+    <div class="hdr-end">
+      <button type="button" class="langbtn" id="langToggle">
+        <span class="on" id="langOn">ع</span><span>/</span><span id="langOff">EN</span>
+      </button>
+      <a href="#contact" class="btn"><span data-edit="nav.cta">اطلب عرض سعر</span> <span class="arw">→</span></a>
     </div>
   </div>
+</header>
 
-  <header class="site-header">
-    <div class="wrap header-row">
-      <div class="logo">
-        <span class="logo-mark">حه</span>
-        <span contenteditable="true" class="editable">حلم وهدف</span>
-      </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#services" contenteditable="true" class="editable">خدماتنا</a></li>
-          <li><a href="#about" contenteditable="true" class="editable">من نحن</a></li>
-          <li><a href="#why" contenteditable="true" class="editable">لماذا نحن</a></li>
-          <li><a href="#contact" contenteditable="true" class="editable">تواصل معنا</a></li>
-        </ul>
-      </nav>
-      <a href="#contact" class="btn btn-primary" contenteditable="true">اطلب عرض سعر</a>
-    </div>
-  </header>
+<main id="top">
 
-  <main>
-
-    <!-- HERO -->
-    <section class="editable-section hero" id="hero" draggable="true">
-      <div class="section-toolbar">
-        <div class="drag-handle" title="اسحب لإعادة الترتيب">⠿</div>
-      </div>
-      <div class="wrap">
-        <div>
-          <p class="hero-eyebrow editable" contenteditable="true">شركة حلم وهدف للخدمات البترولية</p>
-          <h1 contenteditable="true" class="editable">نبني ونجهز محطات الوقود التي تدوم</h1>
-          <p class="lead editable" contenteditable="true">من التصميم والإنشاء إلى تركيب المعدات والصيانة الدورية، نرافق أصحاب محطات الوقود بحلول متكاملة تضمن التشغيل الآمن والمستمر.</p>
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary" contenteditable="true">اطلب عرض سعر</a>
-            <a href="#services" class="btn btn-ghost" contenteditable="true">تعرّف على خدماتنا</a>
-          </div>
-        </div>
-        <div class="hero-visual dropzone" onclick="document.getElementById('heroImgInput').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleImageDrop(event,this)">
-          <input type="file" id="heroImgInput" accept="image/*" onchange="handleImageSelect(event,this.closest('.dropzone'))">
-          <svg viewBox="0 0 200 200" width="60%" style="position:relative;z-index:2;color:#E7B978" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 70 L20 40 L180 40 L180 70"/>
-            <path d="M35 40 L35 20 L165 20 L165 40"/>
-            <line x1="55" y1="70" x2="55" y2="170"/>
-            <line x1="145" y1="70" x2="145" y2="170"/>
-            <rect x="80" y="90" width="40" height="80" rx="4"/>
-            <circle cx="100" cy="115" r="10"/>
-            <line x1="100" y1="115" x2="107" y2="106"/>
-          </svg>
-          <div class="dropzone-hint">اسحب صورة لمحطتكم هنا أو انقر للرفع</div>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="blk section hero" id="hero" data-blk="hero">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <span class="regmark" style="top:8px;inset-inline-start:calc(var(--gut) - 20px)"></span>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-edit="hero.eyebrow">الخدمات البترولية · المملكة العربية السعودية</span>
+        <h1 class="display">
+          <span data-edit="hero.title.a">نبني محطات وقود</span><br>
+          <span class="wordmark" data-edit="hero.title.b">تعمل بلا توقف</span>
+        </h1>
+        <p class="lead" data-edit="hero.lead">من دراسة الموقع والتصميم الهندسي، إلى الإنشاء وتركيب المضخات والخزانات، وصولًا إلى عقود الصيانة الدورية — نتولى محطتك من أول مخطط حتى آخر لتر يُباع.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn"><span data-edit="hero.cta1">ابدأ مشروع محطة</span> <span class="arw">→</span></a>
+          <a href="#services" class="btn btn-ghost" data-edit="hero.cta2">استعرض الخدمات</a>
         </div>
       </div>
-      <div class="wrap">
-        <div class="stat-strip">
-          <div class="stat"><b contenteditable="true" class="editable">+120</b><span contenteditable="true" class="editable">محطة تم تجهيزها</span></div>
-          <div class="stat"><b contenteditable="true" class="editable">15</b><span contenteditable="true" class="editable">عامًا من الخبرة</span></div>
-          <div class="stat"><b contenteditable="true" class="editable">24/7</b><span contenteditable="true" class="editable">دعم فني وطوارئ</span></div>
-          <div class="stat"><b contenteditable="true" class="editable">100%</b><span contenteditable="true" class="editable">التزام بمعايير السلامة</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="editable-section" id="services" draggable="true">
-      <div class="section-toolbar"><div class="drag-handle" title="اسحب لإعادة الترتيب">⠿</div></div>
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="kicker editable" contenteditable="true">خدماتنا</p>
-          <h2 contenteditable="true" class="editable">كل ما تحتاجه محطتك تحت مظلة واحدة</h2>
-        </div>
-        <div class="services-grid">
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="18" height="34" rx="2"/><path d="M28 18h6a4 4 0 0 1 4 4v10a3 3 0 0 0 6 0V17l-6-7"/><line x1="14" y1="16" x2="24" y2="16"/></svg></div>
-            <h3 contenteditable="true" class="editable">تصميم وإنشاء المحطات</h3>
-            <p contenteditable="true" class="editable">دراسات جدوى وتصاميم هندسية وتنفيذ إنشائي كامل لمحطات الوقود من الصفر.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 6l-4 4 4 4 12 12-4 4-12-12-4-4 4-4z"/><path d="M8 40l10-10"/><path d="M20 20l-4 4"/></svg></div>
-            <h3 contenteditable="true" class="editable">تركيب وصيانة المضخات</h3>
-            <p contenteditable="true" class="editable">تركيب مضخات الوقود ومعايرتها، وبرامج صيانة دورية تمنع الأعطال قبل وقوعها.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><line x1="24" y1="24" x2="31" y2="15"/><circle cx="24" cy="24" r="2"/></svg></div>
-            <h3 contenteditable="true" class="editable">أنظمة القياس والفوترة</h3>
-            <p contenteditable="true" class="editable">أنظمة قياس دقيقة وربط إلكتروني بالفوترة يضمن الشفافية في كل عملية بيع.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l16 6v10c0 11-7 18-16 20-9-2-16-9-16-20V12z"/><path d="M17 24l5 5 9-10"/></svg></div>
-            <h3 contenteditable="true" class="editable">تراخيص وسلامة</h3>
-            <p contenteditable="true" class="editable">استخراج التراخيص اللازمة وتطبيق معايير السلامة المعتمدة محليًا وعالميًا.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><line x1="24" y1="24" x2="24" y2="14"/><line x1="24" y1="24" x2="31" y2="28"/></svg></div>
-            <h3 contenteditable="true" class="editable">صيانة دورية وطوارئ</h3>
-            <p contenteditable="true" class="editable">فرق ميدانية جاهزة للاستجابة السريعة على مدار الساعة في جميع المناطق.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon"><svg width="22" height="22" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="16" width="22" height="16" rx="2"/><path d="M26 20h9l6 6v6h-4"/><circle cx="14" cy="36" r="3.5"/><circle cx="33" cy="36" r="3.5"/></svg></div>
-            <h3 contenteditable="true" class="editable">توريد المعدات والقطع</h3>
-            <p contenteditable="true" class="editable">توريد مضخات وخزانات وقطع غيار أصلية من موردين معتمدين، بضمان موثوق.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="editable-section alt-bg" id="about" draggable="true">
-      <div class="section-toolbar"><div class="drag-handle" title="اسحب لإعادة الترتيب">⠿</div></div>
-      <div class="wrap">
-        <div class="about-grid">
-          <div class="about-visual dropzone" onclick="document.getElementById('aboutImgInput').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleImageDrop(event,this)">
-            <input type="file" id="aboutImgInput" accept="image/*" onchange="handleImageSelect(event,this.closest('.dropzone'))">
-            <svg viewBox="0 0 200 200" width="55%" style="position:relative;z-index:2;color:#E7B978" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="100" cy="80" r="46"/>
-              <line x1="100" y1="80" x2="100" y2="52"/>
-              <line x1="100" y1="80" x2="120" y2="92"/>
-              <path d="M40 172c6-30 30-46 60-46s54 16 60 46"/>
-            </svg>
-            <div class="dropzone-hint">اسحب صورة فريق العمل هنا أو انقر للرفع</div>
-          </div>
-          <div>
-            <p class="kicker editable" contenteditable="true">من نحن</p>
-            <h2 contenteditable="true" class="editable">شريك محطتك من أول حجر إلى آخر قطرة وقود</h2>
-            <p contenteditable="true" class="editable">تأسست حلم وهدف لتقديم خدمات متكاملة لأصحاب محطات الوقود، جمعنا بين الخبرة الهندسية والمعرفة التشغيلية لنكون الجهة الوحيدة التي يحتاجها المستثمر من فكرة المحطة حتى تشغيلها اليومي.</p>
-            <ul class="about-list">
-              <li><span class="tick">✓</span><span contenteditable="true" class="editable">فرق هندسية وفنية متخصصة في قطاع الطاقة</span></li>
-              <li><span class="tick">✓</span><span contenteditable="true" class="editable">التزام كامل بالمواصفات والتراخيص المحلية</span></li>
-              <li><span class="tick">✓</span><span contenteditable="true" class="editable">عقود صيانة مرنة تناسب حجم كل محطة</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section class="editable-section why" id="why" draggable="true">
-      <div class="section-toolbar"><div class="drag-handle" title="اسحب لإعادة الترتيب">⠿</div></div>
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="kicker editable" contenteditable="true">لماذا حلم وهدف</p>
-          <h2 contenteditable="true" class="editable">موثوقية تقاس بالأرقام</h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-card"><b contenteditable="true" class="editable">أقل من 3 ساعات</b><span contenteditable="true" class="editable">متوسط زمن الاستجابة لبلاغات الطوارئ</span></div>
-          <div class="why-card"><b contenteditable="true" class="editable">فريق داخلي كامل</b><span contenteditable="true" class="editable">دون الاعتماد على مقاولي باطن في الخدمات الأساسية</span></div>
-          <div class="why-card"><b contenteditable="true" class="editable">ضمان ما بعد التسليم</b><span contenteditable="true" class="editable">متابعة دورية للمعدات بعد كل مشروع تركيب</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="editable-section" id="contact" draggable="true">
-      <div class="section-toolbar"><div class="drag-handle" title="اسحب لإعادة الترتيب">⠿</div></div>
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="kicker editable" contenteditable="true">تواصل معنا</p>
-          <h2 contenteditable="true" class="editable">جاهزون لمناقشة مشروع محطتك</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <p contenteditable="true" class="editable">اترك بياناتك وسيتواصل معك أحد مستشارينا خلال يوم عمل واحد.</p>
-            <div class="info-row"><span class="k">الهاتف</span><span contenteditable="true" class="editable">966+ 12 345 6789</span></div>
-            <div class="info-row"><span class="k">البريد</span><span contenteditable="true" class="editable">info@holmwahadaf.sa</span></div>
-            <div class="info-row"><span class="k">المكتب</span><span contenteditable="true" class="editable">الرياض، المملكة العربية السعودية</span></div>
-          </div>
-          <form class="contact-form" onsubmit="event.preventDefault();alert('هذا نموذج تجريبي — لربطه بالبريد أو نظام CRM أخبرني وسأساعدك بذلك.')">
-            <div class="row2">
-              <div><label>الاسم</label><input type="text" placeholder="اسمك الكامل"></div>
-              <div><label>رقم الجوال</label><input type="tel" placeholder="05XXXXXXXX"></div>
+      <figure class="hero-figure" style="margin:0">
+        <div class="frame">
+          <div class="slot" data-slot="hero" data-upload-label="انقر أو أفلت صورة هنا">
+            <div class="ph">
+              <svg viewBox="0 0 240 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                <path d="M18 150 L18 62 L118 32 L118 150"/>
+                <path d="M18 62 L118 32"/>
+                <path d="M4 150 L232 150"/>
+                <path d="M40 150 L40 96 L96 96 L96 150"/>
+                <path d="M40 96 L40 82 L96 82 L96 96"/>
+                <path d="M150 150 L150 74 L206 74 L206 150"/>
+                <path d="M144 74 L212 74"/>
+                <path d="M162 92 L194 92 M162 106 L194 106"/>
+                <path d="M178 118 L178 150"/>
+                <circle cx="178" cy="60" r="7"/>
+                <path d="M178 67 L178 74"/>
+              </svg>
             </div>
-            <div><label>البريد الإلكتروني</label><input type="email" placeholder="example@email.com"></div>
-            <div><label>تفاصيل المشروع</label><textarea placeholder="اكتب نبذة عن محطتك واحتياجك"></textarea></div>
-            <button type="submit" class="btn btn-primary" style="justify-self:start">إرسال الطلب</button>
-          </form>
+          </div>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h4 contenteditable="true" class="editable">حلم وهدف</h4>
-          <p contenteditable="true" class="editable">شريككم المتكامل في إنشاء وتجهيز وصيانة محطات الوقود في المملكة العربية السعودية.</p>
-        </div>
-        <div>
-          <h4 contenteditable="true" class="editable">روابط سريعة</h4>
-          <ul>
-            <li><a href="#services" contenteditable="true" class="editable">خدماتنا</a></li>
-            <li><a href="#about" contenteditable="true" class="editable">من نحن</a></li>
-            <li><a href="#contact" contenteditable="true" class="editable">تواصل معنا</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 contenteditable="true" class="editable">تواصل</h4>
-          <ul>
-            <li contenteditable="true" class="editable">966+ 12 345 6789</li>
-            <li contenteditable="true" class="editable">info@holmwahadaf.sa</li>
-            <li contenteditable="true" class="editable">الرياض، السعودية</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom" contenteditable="true">© <span id="year"></span> شركة حلم وهدف. جميع الحقوق محفوظة.</div>
+        <figcaption class="tag" data-edit="hero.tag">محطة نموذجية — تسليم مفتاح باليد</figcaption>
+      </figure>
     </div>
-  </footer>
+
+    <div class="stats">
+      <div class="stat"><b data-edit="stat.1.n">120+</b><span data-edit="stat.1.l">محطة تم تجهيزها</span></div>
+      <div class="stat"><b data-edit="stat.2.n">15</b><span data-edit="stat.2.l">عامًا في قطاع الطاقة</span></div>
+      <div class="stat"><b data-edit="stat.3.n">24/7</b><span data-edit="stat.3.l">استجابة فنية وطوارئ</span></div>
+      <div class="stat"><b data-edit="stat.4.n">100%</b><span data-edit="stat.4.l">مطابقة لاشتراطات السلامة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ticker -->
+<div class="blk ticker" data-blk="ticker">
+  <div class="blk-tools" data-tools></div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ============================================================
+     SERVICES — an index, not a card grid
+     ============================================================ -->
+<section class="blk section" id="services" data-blk="services">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 01 ]</span> <span data-edit="sec.services.k">الخدمات</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.services.meta">ستة تخصصات · فريق داخلي</span>
+    </div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:clamp(30px,4vw,58px)" data-edit="sec.services.h">كل ما تحتاجه المحطة، تحت سقف واحد</h2>
+
+    <div class="svc-list">
+      <div class="svc-row">
+        <span class="svc-num">01</span>
+        <h3 class="svc-title" data-edit="svc.1.t">تصميم وإنشاء المحطات</h3>
+        <p class="svc-desc" data-edit="svc.1.d">دراسة الموقع وحساب الطاقة الاستيعابية، مخططات معمارية وإنشائية معتمدة، وتنفيذ كامل حتى التسليم.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V7l9-4 9 4v14"/><path d="M3 12h18"/><path d="M12 3v18"/></svg></span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-num">02</span>
+        <h3 class="svc-title" data-edit="svc.2.t">الخزانات وشبكات الوقود</h3>
+        <p class="svc-desc" data-edit="svc.2.d">توريد وتركيب خزانات أرضية مزدوجة الجدار، شبكات تغذية وتنفيس، واختبارات ضغط وإحكام موثقة.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="8" width="20" height="9" rx="4.5"/><path d="M7 8V5M17 8V5"/><path d="M2 12.5h20"/></svg></span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-num">03</span>
+        <h3 class="svc-title" data-edit="svc.3.t">المضخات والمعايرة</h3>
+        <p class="svc-desc" data-edit="svc.3.d">تركيب مضخات من موردين معتمدين، معايرة دقيقة بشهادات، وضبط دوري يحفظ حقك وحق العميل.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="9" height="18"/><path d="M13 9h4a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3"/><path d="M6.5 7h4"/></svg></span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-num">04</span>
+        <h3 class="svc-title" data-edit="svc.4.t">أنظمة القياس والفوترة</h3>
+        <p class="svc-desc" data-edit="svc.4.d">قياس أوتوماتيكي لمنسوب الخزانات، ربط المضخات بنقاط البيع، وتقارير يومية تكشف الفروقات فورًا.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 12l5-4"/><path d="M12 3v2M21 12h-2M12 21v-2M3 12h2"/></svg></span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-num">05</span>
+        <h3 class="svc-title" data-edit="svc.5.t">التراخيص والسلامة</h3>
+        <p class="svc-desc" data-edit="svc.5.d">استكمال ملفات التراخيص لدى الجهات المختصة، أنظمة إطفاء وإنذار، ولوحات إرشاد مطابقة للاشتراطات.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 5.2-3.4 8.6-8 10-4.6-1.4-8-4.8-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+      </div>
+      <div class="svc-row">
+        <span class="svc-num">06</span>
+        <h3 class="svc-title" data-edit="svc.6.t">عقود الصيانة والطوارئ</h3>
+        <p class="svc-desc" data-edit="svc.6.d">زيارات وقائية مجدولة، مخزون قطع غيار أصلية، وفريق طوارئ يصل قبل أن تتحول المشكلة إلى توقف.</p>
+        <span class="svc-ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3a5 5 0 0 0-4.6 7L3 17.4V21h3.6l7.4-7.4A5 5 0 0 0 21 9l-3 3-3-3 3-3a5 5 0 0 0-3-3z"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="blk section" id="about" data-blk="about" style="background:var(--paper-2)">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 02 ]</span> <span data-edit="sec.about.k">عن الشركة</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.about.meta">تأسست 2011</span>
+    </div>
+    <div class="about-grid">
+      <figure class="about-figure" style="margin:0">
+        <div class="slot" data-slot="about" data-upload-label="انقر أو أفلت صورة هنا">
+          <div class="ph">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+              <rect x="28" y="52" width="144" height="100"/>
+              <path d="M28 78 L172 78"/><path d="M52 52 L52 78"/>
+              <path d="M48 100 L86 100 M48 116 L110 116 M48 132 L74 132"/>
+              <circle cx="136" cy="118" r="20"/><path d="M136 106 L136 118 L145 124"/>
+            </svg>
+          </div>
+        </div>
+      </figure>
+      <div>
+        <h2 class="h2" data-edit="about.h">شريك تشغيلي، لا مجرد مقاول</h2>
+        <p class="lead" style="margin-top:22px" data-edit="about.p1">بدأت «حلم وهدف» من ورشة صيانة واحدة، وكبرت مع كل محطة سلّمناها. اليوم نجمع الهندسة المدنية، والميكانيكا، وأنظمة القياس في فريق واحد — وهذا يعني أن مسؤولية المحطة لا تتوزع بين مقاولين يتبادلون اللوم.</p>
+        <ul class="checklist">
+          <li><span class="tick">[ ✓ ]</span><span data-edit="about.li1">مهندسون وفنيون بعقود مباشرة، دون مقاولي باطن في الأعمال الحرجة</span></li>
+          <li><span class="tick">[ ✓ ]</span><span data-edit="about.li2">التزام باشتراطات الدفاع المدني وهيئة المواصفات في كل مرحلة</span></li>
+          <li><span class="tick">[ ✓ ]</span><span data-edit="about.li3">توثيق كامل للتسليم: مخططات نهائية، شهادات اختبار، ودليل تشغيل</span></li>
+          <li><span class="tick">[ ✓ ]</span><span data-edit="about.li4">عقود صيانة مرنة تُقاس على عدد المضخات لا على حجم الشركة</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY — inverted slab
+     ============================================================ -->
+<section class="blk section slab" id="why" data-blk="why">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 03 ]</span> <span data-edit="sec.why.k">لماذا نحن</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.why.meta">التزامات مكتوبة</span>
+    </div>
+    <h2 class="h2" style="max-width:18ch;margin-bottom:clamp(30px,4vw,58px)" data-edit="why.h">وعود قابلة للقياس، لا شعارات</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="k" data-edit="why.1.k">زمن الاستجابة</span>
+        <b data-edit="why.1.t">أقل من 3 ساعات</b>
+        <span data-edit="why.1.d">متوسط وصول فريق الطوارئ لبلاغات التوقف داخل نطاق تغطيتنا، موثق في تقارير العقد.</span>
+      </div>
+      <div class="why-card">
+        <span class="k" data-edit="why.2.k">جهة واحدة</span>
+        <b data-edit="why.2.t">مسؤولية غير مجزأة</b>
+        <span data-edit="why.2.d">المدني والميكانيكي والكهربائي من فريقنا — عطل واحد يعني رقم هاتف واحد، لا ثلاثة.</span>
+      </div>
+      <div class="why-card">
+        <span class="k" data-edit="why.3.k">ما بعد التسليم</span>
+        <b data-edit="why.3.t">ضمان ومتابعة</b>
+        <span data-edit="why.3.d">زيارة فحص بعد 30 و90 يومًا من التشغيل، وضمان يغطي التركيب لا المعدات فقط.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="blk section" id="process" data-blk="process">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 04 ]</span> <span data-edit="sec.process.k">آلية العمل</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.process.meta">أربع مراحل</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <h3 data-edit="step.1.t">زيارة ودراسة</h3>
+        <p data-edit="step.1.d">نعاين الموقع، نراجع الصكوك والاشتراطات، ونخرج بتقدير مبدئي للتكلفة والمدة.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h3 data-edit="step.2.t">تصميم واعتماد</h3>
+        <p data-edit="step.2.d">مخططات تنفيذية وجدول كميات واضح، ومتابعة الاعتمادات لدى الجهات حتى صدورها.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h3 data-edit="step.3.t">تنفيذ وتركيب</h3>
+        <p data-edit="step.3.d">أعمال مدنية ثم تركيب الخزانات والمضخات والأنظمة، بتقرير تقدم أسبوعي مصوّر.</p>
+      </div>
+      <div class="step">
+        <span class="n">04</span>
+        <h3 data-edit="step.4.t">تشغيل وصيانة</h3>
+        <p data-edit="step.4.d">اختبارات وتسليم موثق، تدريب طاقم المحطة، ثم عقد صيانة يبدأ من يوم التشغيل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WORK / GALLERY
+     ============================================================ -->
+<section class="blk section" id="work" data-blk="work" style="background:var(--paper-2)">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 05 ]</span> <span data-edit="sec.work.k">أعمالنا</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.work.meta">مختارات من المشاريع</span>
+    </div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:clamp(28px,3.6vw,52px)" data-edit="work.h">محطات سلّمناها، وما زلنا نصونها</h2>
+    <div class="gal">
+      <div class="cell"><div class="slot" data-slot="g1" data-upload-label="انقر أو أفلت صورة هنا"><div class="ph"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 100 L188 100"/><path d="M30 100 L30 46 L90 30 L90 100"/><path d="M30 46 L90 30"/><path d="M118 100 L118 52 L170 52 L170 100"/><path d="M112 52 L176 52"/><path d="M130 68 L158 68"/></svg></div></div></div>
+      <div class="cell"><div class="slot" data-slot="g2" data-upload-label="انقر أو أفلت صورة هنا"><div class="ph"><svg viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="34" y="30" width="52" height="94"/><path d="M34 54 L86 54"/><circle cx="60" cy="86" r="14"/><path d="M60 74 L60 86 L69 92"/><path d="M20 124 L100 124"/></svg></div></div></div>
+      <div class="cell"><div class="slot" data-slot="g3" data-upload-label="انقر أو أفلت صورة هنا"><div class="ph"><svg viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="18" y="62" width="84" height="38" rx="19"/><path d="M38 62 V44 M82 62 V44"/><path d="M18 81 L102 81"/><path d="M20 118 L100 118"/></svg></div></div></div>
+      <div class="cell"><div class="slot" data-slot="g4" data-upload-label="انقر أو أفلت صورة هنا"><div class="ph"><svg viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M60 26 L96 40 V70 c0 24-15 38-36 45-21-7-36-21-36-45V40z"/><path d="M45 74 L56 85 L77 62"/><path d="M20 126 L100 126"/></svg></div></div></div>
+      <div class="cell"><div class="slot" data-slot="g5" data-upload-label="انقر أو أفلت صورة هنا"><div class="ph"><svg viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="26" y="34" width="68" height="82"/><path d="M40 54 L80 54 M40 70 L80 70 M40 86 L64 86"/><path d="M20 128 L100 128"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="blk section" id="contact" data-blk="contact">
+  <div class="blk-tools" data-tools></div>
+  <div class="shell">
+    <div class="sec-head">
+      <span class="mono"><span class="idx">[ 06 ]</span> <span data-edit="sec.contact.k">تواصل</span></span>
+      <span class="bar"></span>
+      <span class="mono" data-edit="sec.contact.meta">رد خلال يوم عمل</span>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="h2" data-edit="contact.h">لنتحدث عن محطتك</h2>
+        <p class="lead" style="margin-block:20px 30px" data-edit="contact.p">أرسل تفاصيل الموقع أو المحطة القائمة، وسيتواصل معك أحد مهندسينا — لا موظف مبيعات — خلال يوم عمل واحد.</p>
+        <div class="info-rows">
+          <div class="info-row"><span class="k" data-edit="contact.k1">الهاتف</span><span class="v" data-edit="contact.v1">+966 12 345 6789</span></div>
+          <div class="info-row"><span class="k" data-edit="contact.k2">البريد</span><span class="v" data-edit="contact.v2">info@holmwahadaf.sa</span></div>
+          <div class="info-row"><span class="k" data-edit="contact.k3">المكتب</span><span class="v" data-edit="contact.v3">الرياض، المملكة العربية السعودية</span></div>
+          <div class="info-row"><span class="k" data-edit="contact.k4">الدوام</span><span class="v" data-edit="contact.v4">الأحد – الخميس · 8ص – 5م</span></div>
+        </div>
+      </div>
+
+      <form class="form" id="leadForm" novalidate>
+        <div class="f2">
+          <div class="field">
+            <label for="f-name" data-edit="form.name">الاسم</label>
+            <input id="f-name" name="name" type="text" required data-ph="form.name.ph" placeholder="الاسم الكامل">
+          </div>
+          <div class="field">
+            <label for="f-phone" data-edit="form.phone">رقم الجوال</label>
+            <input id="f-phone" name="phone" type="tel" required data-ph="form.phone.ph" placeholder="05XXXXXXXX">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email" data-edit="form.email">البريد الإلكتروني</label>
+          <input id="f-email" name="email" type="email" data-ph="form.email.ph" placeholder="name@company.com">
+        </div>
+        <div class="field">
+          <label for="f-msg" data-edit="form.msg">تفاصيل المشروع</label>
+          <textarea id="f-msg" name="message" data-ph="form.msg.ph" placeholder="موقع المحطة، عدد المضخات، ونوع الخدمة المطلوبة"></textarea>
+        </div>
+        <button type="submit" class="btn" style="justify-self:start"><span data-edit="form.submit">إرسال الطلب</span> <span class="arw">→</span></button>
+        <p class="form-note" data-edit="form.note">بإرسالك الطلب توافق على تواصلنا معك بخصوص استفسارك فقط.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — the discreet login button lives here
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="fcol">
+        <h4 data-edit="foot.brand">حلم وهدف للخدمات البترولية</h4>
+        <p data-edit="foot.about">تصميم وإنشاء وتجهيز وصيانة محطات الوقود في المملكة العربية السعودية. سجل تجاري وتصنيف مقاولين ساري.</p>
+      </div>
+      <div class="fcol">
+        <span class="mono" data-edit="foot.k1">تنقّل</span>
+        <a href="#services" data-edit="foot.l1">الخدمات</a>
+        <a href="#about" data-edit="foot.l2">عن الشركة</a>
+        <a href="#process" data-edit="foot.l3">آلية العمل</a>
+        <a href="#work" data-edit="foot.l4">أعمالنا</a>
+      </div>
+      <div class="fcol">
+        <span class="mono" data-edit="foot.k2">تواصل</span>
+        <a href="tel:+966123456789" data-edit="foot.c1">+966 12 345 6789</a>
+        <a href="mailto:info@holmwahadaf.sa" data-edit="foot.c2">info@holmwahadaf.sa</a>
+        <a href="#contact" data-edit="foot.c3">الرياض، السعودية</a>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span class="mono">© <span id="yr"></span> <span data-edit="foot.rights">حلم وهدف — جميع الحقوق محفوظة</span></span>
+      <button type="button" class="login-dot" id="loginBtn">
+        <span class="led"></span><span data-i18n="login.btn">دخول المدير</span>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LOGIN MODAL
+     ============================================================ -->
+<div class="overlay" id="loginOverlay">
+  <div class="modal">
+    <button type="button" class="modal-x" data-close>✕</button>
+    <div class="modal-head">
+      <h3 data-i18n="login.h">دخول لوحة التحرير</h3>
+      <p data-i18n="login.p">هذه الصفحة مخصصة لمدير الموقع لتعديل المحتوى مباشرة دون برمجة.</p>
+    </div>
+    <form class="modal-body" id="loginForm">
+      <div class="err" id="loginErr"></div>
+      <div class="field">
+        <label for="l-user" data-i18n="login.user">اسم المستخدم أو البريد</label>
+        <input id="l-user" type="text" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="l-pass" data-i18n="login.pass">كلمة المرور</label>
+        <input id="l-pass" type="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn" id="loginSubmit" data-i18n="login.go">دخول</button>
+      <p class="mode-note" id="modeNote"></p>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span id="toastMsg"></span></div>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ================================================================
+   حلم وهدف — page engine
+   1. CONFIG      2. DICTIONARY     3. STORE (local | supabase)
+   4. STATE       5. RENDER         6. EDITOR
+   ================================================================ */
 
-// ---------- edit mode toggle ----------
-function toggleEditMode(){
-  const on = document.body.classList.toggle('edit-mode');
-  document.querySelectorAll('.editable').forEach(el=>el.contentEditable = on);
-  document.querySelectorAll('.editable-section').forEach(el=>el.draggable = on);
-  document.getElementById('editToggleBtn').textContent = on ? 'إيقاف وضع التحرير' : 'تفعيل وضع التحرير';
+/* ---------- 1. CONFIG ------------------------------------------
+   LOCAL MODE (default): edits are saved in this browser only.
+   CLOUD MODE: fill the two Supabase values below and edits are
+   saved to a real database — shared across every device.
+   --------------------------------------------------------------- */
+const CONFIG = {
+  SUPABASE_URL:      'https://vnhavxkktlnqbtqfyxtv.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_pwCb9-NgQR9gImOneniaPg_y2iHUOZU',
+  SITE_ROW_ID:       1,
+  BUCKET:            'site-images',
+  TIMEOUT_MS:        8000,          // never let a slow network hang the page
+  LOCAL_USER:        'admin',
+  /* Only used if the Supabase settings above are blanked out. Left empty on
+     purpose: this file is in a public repository, so a real password here
+     would be readable by anyone. Empty means local sign-in is refused. */
+  LOCAL_PASS:        ''
+};
+const CLOUD = !!(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY);
+const LS_DATA = 'hw.site.v1', LS_SESS = 'hw.sess.v1';
+const LS_CACHE = 'hw.cache.v1';     // last content successfully read from the cloud
+const LS_DRAFT = 'hw.draft.v1';     // edits that failed to reach the cloud
+
+/* fetch that always gives up rather than hanging for ever */
+async function req(url, opts, ms){
+  if(typeof AbortController === 'undefined') return fetch(url, opts);
+  const c = new AbortController();
+  const id = setTimeout(()=> c.abort(), ms || CONFIG.TIMEOUT_MS);
+  try{ return await fetch(url, Object.assign({}, opts, {signal:c.signal})); }
+  finally{ clearTimeout(id); }
 }
 
-// ---------- drag & drop reorder of sections ----------
-const main = document.querySelector('main');
-let dragEl = null;
-main.querySelectorAll('.editable-section').forEach(sec=>{
-  sec.addEventListener('dragstart', ()=>{ dragEl = sec; sec.classList.add('dragging'); });
-  sec.addEventListener('dragend', ()=>{ sec.classList.remove('dragging'); });
-  sec.addEventListener('dragover', (e)=>{
-    e.preventDefault();
-    if(!dragEl || dragEl===sec) return;
-    const rect = sec.getBoundingClientRect();
-    const after = (e.clientY - rect.top) > rect.height/2;
-    main.insertBefore(dragEl, after ? sec.nextSibling : sec);
+/* ---------- 2. DICTIONARY -------------------------------------- */
+/* editable page content — every key maps to a [data-edit] element */
+const CONTENT = {
+  'brand.name':      ['حلم وهدف','Holm Wahadaf'],
+  'brand.mark':      ['حه','HW'],
+  'ticker.1':        ['تصميم وإنشاء','DESIGN & BUILD'],
+  'ticker.2':        ['خزانات وشبكات','TANKS & PIPEWORK'],
+  'ticker.3':        ['مضخات ومعايرة','DISPENSERS & CALIBRATION'],
+  'ticker.4':        ['أنظمة قياس','GAUGING SYSTEMS'],
+  'ticker.5':        ['تراخيص وسلامة','PERMITS & SAFETY'],
+  'ticker.6':        ['صيانة وطوارئ','MAINTENANCE & EMERGENCY'],
+  'ticker.7':        ['تغطية على مستوى المملكة','KINGDOM-WIDE COVERAGE'],
+  'nav.services':    ['الخدمات','Services'],
+  'nav.about':       ['عن الشركة','Company'],
+  'nav.process':     ['آلية العمل','Process'],
+  'nav.work':        ['أعمالنا','Work'],
+  'nav.contact':     ['تواصل','Contact'],
+  'nav.cta':         ['اطلب عرض سعر','Request a quote'],
+
+  'hero.eyebrow':    ['الخدمات البترولية · المملكة العربية السعودية','Petroleum services · Kingdom of Saudi Arabia'],
+  'hero.title.a':    ['نبني محطات وقود','We build fuel stations'],
+  'hero.title.b':    ['تعمل بلا توقف','that never stop running'],
+  'hero.lead':       ['من دراسة الموقع والتصميم الهندسي، إلى الإنشاء وتركيب المضخات والخزانات، وصولًا إلى عقود الصيانة الدورية — نتولى محطتك من أول مخطط حتى آخر لتر يُباع.','From site study and engineering design, through construction, tank and dispenser installation, to scheduled maintenance contracts — we carry your station from the first drawing to the last litre sold.'],
+  'hero.cta1':       ['ابدأ مشروع محطة','Start a station project'],
+  'hero.cta2':       ['استعرض الخدمات','Browse services'],
+  'hero.tag':        ['محطة نموذجية — تسليم مفتاح باليد','Reference station — turnkey delivery'],
+
+  'stat.1.n':['120+','120+'],   'stat.1.l':['محطة تم تجهيزها','stations delivered'],
+  'stat.2.n':['15','15'],       'stat.2.l':['عامًا في قطاع الطاقة','years in the energy sector'],
+  'stat.3.n':['24/7','24/7'],   'stat.3.l':['استجابة فنية وطوارئ','technical & emergency response'],
+  'stat.4.n':['100%','100%'],   'stat.4.l':['مطابقة لاشتراطات السلامة','safety-code compliance'],
+
+  'sec.services.k':   ['الخدمات','Services'],
+  'sec.services.meta':['ستة تخصصات · فريق داخلي','Six disciplines · in-house team'],
+  'sec.services.h':   ['كل ما تحتاجه المحطة، تحت سقف واحد','Everything a station needs, under one roof'],
+  'svc.1.t':['تصميم وإنشاء المحطات','Station design & construction'],
+  'svc.1.d':['دراسة الموقع وحساب الطاقة الاستيعابية، مخططات معمارية وإنشائية معتمدة، وتنفيذ كامل حتى التسليم.','Site study and throughput sizing, approved architectural and structural drawings, and full build-out to handover.'],
+  'svc.2.t':['الخزانات وشبكات الوقود','Tanks & fuel networks'],
+  'svc.2.d':['توريد وتركيب خزانات أرضية مزدوجة الجدار، شبكات تغذية وتنفيس، واختبارات ضغط وإحكام موثقة.','Supply and installation of double-wall underground tanks, supply and vent lines, with documented pressure and tightness testing.'],
+  'svc.3.t':['المضخات والمعايرة','Dispensers & calibration'],
+  'svc.3.d':['تركيب مضخات من موردين معتمدين، معايرة دقيقة بشهادات، وضبط دوري يحفظ حقك وحق العميل.','Dispensers from approved suppliers, certified precision calibration, and periodic adjustment that protects you and your customer alike.'],
+  'svc.4.t':['أنظمة القياس والفوترة','Gauging & billing systems'],
+  'svc.4.d':['قياس أوتوماتيكي لمنسوب الخزانات، ربط المضخات بنقاط البيع، وتقارير يومية تكشف الفروقات فورًا.','Automatic tank gauging, dispenser-to-POS integration, and daily reports that surface discrepancies immediately.'],
+  'svc.5.t':['التراخيص والسلامة','Permits & safety'],
+  'svc.5.d':['استكمال ملفات التراخيص لدى الجهات المختصة، أنظمة إطفاء وإنذار، ولوحات إرشاد مطابقة للاشتراطات.','Permit files completed with the relevant authorities, fire suppression and alarm systems, and code-compliant signage.'],
+  'svc.6.t':['عقود الصيانة والطوارئ','Maintenance & emergency contracts'],
+  'svc.6.d':['زيارات وقائية مجدولة، مخزون قطع غيار أصلية، وفريق طوارئ يصل قبل أن تتحول المشكلة إلى توقف.','Scheduled preventive visits, genuine spare-part stock, and an emergency crew that arrives before a fault becomes downtime.'],
+
+  'sec.about.k':   ['عن الشركة','Company'],
+  'sec.about.meta':['تأسست 2011','Established 2011'],
+  'about.h':       ['شريك تشغيلي، لا مجرد مقاول','An operating partner, not just a contractor'],
+  'about.p1':      ['بدأت «حلم وهدف» من ورشة صيانة واحدة، وكبرت مع كل محطة سلّمناها. اليوم نجمع الهندسة المدنية، والميكانيكا، وأنظمة القياس في فريق واحد — وهذا يعني أن مسؤولية المحطة لا تتوزع بين مقاولين يتبادلون اللوم.','Holm Wahadaf began as a single maintenance workshop and grew with every station we handed over. Today civil engineering, mechanical work and gauging systems sit in one team — which means responsibility for your station is never split between contractors trading blame.'],
+  'about.li1':['مهندسون وفنيون بعقود مباشرة، دون مقاولي باطن في الأعمال الحرجة','Directly employed engineers and technicians — no subcontractors on critical work'],
+  'about.li2':['التزام باشتراطات الدفاع المدني وهيئة المواصفات في كل مرحلة','Civil Defence and SASO requirements observed at every stage'],
+  'about.li3':['توثيق كامل للتسليم: مخططات نهائية، شهادات اختبار، ودليل تشغيل','Complete handover pack: as-built drawings, test certificates, operating manual'],
+  'about.li4':['عقود صيانة مرنة تُقاس على عدد المضخات لا على حجم الشركة','Flexible maintenance contracts priced per dispenser, not per company size'],
+
+  'sec.why.k':   ['لماذا نحن','Why us'],
+  'sec.why.meta':['التزامات مكتوبة','Written commitments'],
+  'why.h':       ['وعود قابلة للقياس، لا شعارات','Measurable promises, not slogans'],
+  'why.1.k':['زمن الاستجابة','Response time'],
+  'why.1.t':['أقل من 3 ساعات','Under 3 hours'],
+  'why.1.d':['متوسط وصول فريق الطوارئ لبلاغات التوقف داخل نطاق تغطيتنا، موثق في تقارير العقد.','Average emergency-crew arrival for downtime calls inside our coverage area, documented in contract reporting.'],
+  'why.2.k':['جهة واحدة','Single accountability'],
+  'why.2.t':['مسؤولية غير مجزأة','One party answers'],
+  'why.2.d':['المدني والميكانيكي والكهربائي من فريقنا — عطل واحد يعني رقم هاتف واحد، لا ثلاثة.','Civil, mechanical and electrical all in-house — one fault means one phone number, not three.'],
+  'why.3.k':['ما بعد التسليم','After handover'],
+  'why.3.t':['ضمان ومتابعة','Warranty & follow-up'],
+  'why.3.d':['زيارة فحص بعد 30 و90 يومًا من التشغيل، وضمان يغطي التركيب لا المعدات فقط.','Inspection visits at 30 and 90 days after start-up, and a warranty covering installation — not just equipment.'],
+
+  'sec.process.k':   ['آلية العمل','Process'],
+  'sec.process.meta':['أربع مراحل','Four stages'],
+  'step.1.t':['زيارة ودراسة','Visit & study'],
+  'step.1.d':['نعاين الموقع، نراجع الصكوك والاشتراطات، ونخرج بتقدير مبدئي للتكلفة والمدة.','We inspect the site, review deeds and requirements, and produce an initial cost and schedule estimate.'],
+  'step.2.t':['تصميم واعتماد','Design & approval'],
+  'step.2.d':['مخططات تنفيذية وجدول كميات واضح، ومتابعة الاعتمادات لدى الجهات حتى صدورها.','Construction drawings and a clear bill of quantities, with approvals pursued until they are issued.'],
+  'step.3.t':['تنفيذ وتركيب','Build & install'],
+  'step.3.d':['أعمال مدنية ثم تركيب الخزانات والمضخات والأنظمة، بتقرير تقدم أسبوعي مصوّر.','Civil works, then tanks, dispensers and systems — with a photographed weekly progress report.'],
+  'step.4.t':['تشغيل وصيانة','Start-up & maintenance'],
+  'step.4.d':['اختبارات وتسليم موثق، تدريب طاقم المحطة، ثم عقد صيانة يبدأ من يوم التشغيل.','Testing and documented handover, station-staff training, then a maintenance contract from day one.'],
+
+  'sec.work.k':   ['أعمالنا','Work'],
+  'sec.work.meta':['مختارات من المشاريع','Selected projects'],
+  'work.h':       ['محطات سلّمناها، وما زلنا نصونها','Stations we delivered — and still maintain'],
+
+  'sec.contact.k':   ['تواصل','Contact'],
+  'sec.contact.meta':['رد خلال يوم عمل','Reply within one business day'],
+  'contact.h':['لنتحدث عن محطتك','Let us talk about your station'],
+  'contact.p':['أرسل تفاصيل الموقع أو المحطة القائمة، وسيتواصل معك أحد مهندسينا — لا موظف مبيعات — خلال يوم عمل واحد.','Send us the site or existing station details and one of our engineers — not a salesperson — will contact you within one business day.'],
+  'contact.k1':['الهاتف','Phone'],      'contact.v1':['+966 12 345 6789','+966 12 345 6789'],
+  'contact.k2':['البريد','Email'],       'contact.v2':['info@holmwahadaf.sa','info@holmwahadaf.sa'],
+  'contact.k3':['المكتب','Office'],      'contact.v3':['الرياض، المملكة العربية السعودية','Riyadh, Kingdom of Saudi Arabia'],
+  'contact.k4':['الدوام','Hours'],       'contact.v4':['الأحد – الخميس · 8ص – 5م','Sun – Thu · 8am – 5pm'],
+  'form.name':['الاسم','Name'],            'form.name.ph':['الاسم الكامل','Full name'],
+  'form.phone':['رقم الجوال','Mobile'],    'form.phone.ph':['05XXXXXXXX','05XXXXXXXX'],
+  'form.email':['البريد الإلكتروني','Email'], 'form.email.ph':['name@company.com','name@company.com'],
+  'form.msg':['تفاصيل المشروع','Project details'],
+  'form.msg.ph':['موقع المحطة، عدد المضخات، ونوع الخدمة المطلوبة','Station location, number of dispensers, and the service you need'],
+  'form.submit':['إرسال الطلب','Send request'],
+  'form.note':['بإرسالك الطلب توافق على تواصلنا معك بخصوص استفسارك فقط.','By sending this you agree we may contact you regarding your enquiry only.'],
+
+  'foot.brand':['حلم وهدف للخدمات البترولية','Holm Wahadaf Petroleum Services'],
+  'foot.about':['تصميم وإنشاء وتجهيز وصيانة محطات الوقود في المملكة العربية السعودية. سجل تجاري وتصنيف مقاولين ساري.','Design, construction, fit-out and maintenance of fuel stations across Saudi Arabia. Current commercial registration and contractor classification.'],
+  'foot.k1':['تنقّل','Navigate'],
+  'foot.l1':['الخدمات','Services'], 'foot.l2':['عن الشركة','Company'],
+  'foot.l3':['آلية العمل','Process'], 'foot.l4':['أعمالنا','Work'],
+  'foot.k2':['تواصل','Contact'],
+  'foot.c1':['+966 12 345 6789','+966 12 345 6789'],
+  'foot.c2':['info@holmwahadaf.sa','info@holmwahadaf.sa'],
+  'foot.c3':['الرياض، السعودية','Riyadh, Saudi Arabia'],
+  'foot.rights':['حلم وهدف — جميع الحقوق محفوظة','Holm Wahadaf — all rights reserved']
+};
+
+/* interface strings — not editable by the manager */
+const UI = {
+  'ab.brand':['وضع التحرير','EDIT MODE'],
+  'ab.hint':['انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها','Click any text to edit · drag ⠿ to reorder · click any image to replace'],
+  'ab.reset':['استرجاع الأصل','Reset'],
+  'ab.tr':['ترجمة تلقائية','Auto-translate'],
+  'ab.trall':['ترجم الباقي','Translate rest'],
+  'tr.on':['الترجمة التلقائية مفعّلة — ما تكتبه بالعربية يُترجم للإنجليزية','Auto-translate on — what you write in Arabic is mirrored into English'],
+  'tr.off':['الترجمة التلقائية موقوفة — اللغتان تُحرَّران يدويًا','Auto-translate off — each language is edited by hand'],
+  'tr.working':['جارٍ الترجمة…','Translating…'],
+  'tr.done':['تمت ترجمة {n} عنصرًا — راجعها قبل الحفظ','Translated {n} items — review them before saving'],
+  'tr.none':['لا يوجد شيء بحاجة لترجمة','Nothing needs translating'],
+  'tr.fail':['تعذّرت الترجمة — اكتب النص بنفسك','Translation unavailable — please type it yourself'],
+  'ab.export':['تنزيل نسخة','Download'],
+  'ab.save':['حفظ','Save'],
+  'ab.logout':['خروج','Exit'],
+  'login.btn':['دخول المدير','Manager login'],
+  'login.h':['دخول لوحة التحرير','Editor sign-in'],
+  'login.p':['هذه الصفحة مخصصة لمدير الموقع لتعديل المحتوى مباشرة دون برمجة.','For the site manager to edit page content directly — no coding involved.'],
+  'login.user':['اسم المستخدم أو البريد','Username or email'],
+  'login.pass':['كلمة المرور','Password'],
+  'login.go':['دخول','Sign in'],
+  'note.local':['وضع محلي — التعديلات تُحفظ في هذا المتصفح وعلى هذا الجهاز فقط. للنشر للجميع فعّل Supabase.','Local mode — changes are stored in this browser on this device only. Enable Supabase to publish for everyone.'],
+  'note.cloud':['متصل بقاعدة بيانات — التعديلات تُحفظ للجميع فور الضغط على «حفظ».','Connected to the database — changes go live for everyone as soon as you press Save.'],
+  'err.creds':['بيانات الدخول غير صحيحة','Incorrect sign-in details'],
+  'ok.saved':['تم الحفظ','Saved'],
+  'ok.live':['تم النشر — الصفحة محدّثة للجميع','Published — the page is updated for everyone'],
+  'err.save':['تعذّر الحفظ','Could not save'],
+  'err.auth':['انتهت الجلسة — سجّل الدخول مرة أخرى، تعديلاتك محفوظة','Session expired — sign in again, your edits are safe'],
+  'err.offline':['لا يوجد اتصال — تعديلاتك محفوظة محليًا، اضغط «حفظ» عند عودة الاتصال','No connection — your edits are held locally, press Save again when you are back online'],
+  'warn.localimg':['تعذّر رفع الصورة للسحابة — أُضيفت داخل الصفحة مؤقتًا','Could not upload to the cloud — the image was embedded in the page instead'],
+  'info.draft':['تم استرجاع تعديلات لم تُحفظ من آخر مرة','Recovered unsaved edits from last time'],
+  'info.offlinecopy':['تُعرض آخر نسخة محفوظة — تعذّر الاتصال بالخادم','Showing the last saved copy — could not reach the server'],
+  'err.big':['المساحة ممتلئة — احذف بعض الصور أو استخدم صورًا أصغر','Storage is full — remove some images or use smaller ones'],
+  'ok.reset':['تم استرجاع المحتوى الأصلي','Original content restored'],
+  'ask.reset':['استرجاع كل النصوص والصور الأصلية؟ سيُلغى كل تعديل غير محفوظ.','Restore all original text and images? Every unsaved change will be lost.'],
+  'ask.leave':['لديك تعديلات غير محفوظة.','You have unsaved changes.'],
+  'ok.sent':['شكرًا — وصلنا طلبك وسنتواصل معك قريبًا.','Thank you — we have your request and will be in touch shortly.'],
+  'err.form':['يرجى تعبئة الاسم ورقم الجوال.','Please fill in your name and mobile number.'],
+  'up.label':['انقر أو أفلت صورة هنا','Click or drop an image here'],
+  'hidden.label':['قسم مخفي','HIDDEN'],
+  't.up':['تحريك لأعلى','Move up'],
+  't.down':['تحريك لأسفل','Move down'],
+  't.hide':['إخفاء / إظهار القسم','Hide / show section'],
+  't.drag':['اسحب لإعادة الترتيب','Drag to reorder'],
+  'undo':['تراجع','Undo']
+};
+
+/* ---------- 3. STORE -------------------------------------------
+   Designed for the Supabase free plan, where the project sleeps after
+   a week of inactivity and can be briefly unreachable. Rules:
+     · a visitor must never see a blank or stale-to-default page
+     · the network must never block the first render
+     · the manager must never silently lose an edit
+   --------------------------------------------------------------- */
+const Cache = {
+  read(key){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } },
+  write(key, v){ try{ localStorage.setItem(key, JSON.stringify(v)); return true; }catch(e){ return false; } },
+  drop(key){ try{ localStorage.removeItem(key); }catch(e){} }
+};
+
+const Store = {
+  token: null, refresh: null,
+
+  _keep(j){
+    this.token = j.access_token;
+    this.refresh = j.refresh_token || null;
+    try{ sessionStorage.setItem(LS_SESS, JSON.stringify({t:this.token, r:this.refresh})); }catch(e){}
+  },
+
+  async signIn(user, pass){
+    if(!CLOUD){
+      if(!CONFIG.LOCAL_PASS) return false;          // fail closed when no password is set
+      if(user.trim() === CONFIG.LOCAL_USER && pass === CONFIG.LOCAL_PASS){
+        try{ sessionStorage.setItem(LS_SESS, JSON.stringify({t:'local'})); }catch(e){}
+        return true;
+      }
+      return false;
+    }
+    try{
+      const r = await req(CONFIG.SUPABASE_URL + '/auth/v1/token?grant_type=password',{
+        method:'POST',
+        headers:{'apikey':CONFIG.SUPABASE_ANON_KEY,'Content-Type':'application/json'},
+        body:JSON.stringify({email:user.trim(),password:pass})
+      });
+      if(!r.ok) return false;
+      this._keep(await r.json());
+      return true;
+    }catch(e){ return false; }
+  },
+
+  /* access tokens last an hour — renew rather than lose the manager's work */
+  async renew(){
+    if(!CLOUD || !this.refresh) return false;
+    try{
+      const r = await req(CONFIG.SUPABASE_URL + '/auth/v1/token?grant_type=refresh_token',{
+        method:'POST',
+        headers:{'apikey':CONFIG.SUPABASE_ANON_KEY,'Content-Type':'application/json'},
+        body:JSON.stringify({refresh_token:this.refresh})
+      });
+      if(!r.ok) return false;
+      this._keep(await r.json());
+      return true;
+    }catch(e){ return false; }
+  },
+
+  restoreSession(){
+    let s = null;
+    try{ s = JSON.parse(sessionStorage.getItem(LS_SESS)); }catch(e){}
+    if(!s || !s.t) return false;
+    if(CLOUD){ this.token = s.t; this.refresh = s.r || null; }
+    return true;
+  },
+
+  signOut(){
+    this.token = this.refresh = null;
+    try{ sessionStorage.removeItem(LS_SESS); }catch(e){}
+  },
+
+  /* last content read from the cloud — the fallback when it is unreachable */
+  cached(){ return Cache.read(LS_CACHE); },
+
+  async load(){
+    if(!CLOUD) return Cache.read(LS_DATA);
+    try{
+      const r = await req(`${CONFIG.SUPABASE_URL}/rest/v1/site_content?id=eq.${CONFIG.SITE_ROW_ID}&select=data`,{
+        headers:{'apikey':CONFIG.SUPABASE_ANON_KEY},
+        cache:'no-store'
+      });
+      if(!r.ok) return null;
+      const rows = await r.json();
+      const data = rows[0] && rows[0].data;
+      if(!data || !data.text) return null;        // empty starter row — keep defaults
+      Cache.write(LS_CACHE, data);
+      return data;
+    }catch(e){ return null; }                     // paused, offline, slow — caller falls back
+  },
+
+  async _patch(data){
+    return req(`${CONFIG.SUPABASE_URL}/rest/v1/site_content?id=eq.${CONFIG.SITE_ROW_ID}`,{
+      method:'PATCH',
+      headers:{
+        'apikey':CONFIG.SUPABASE_ANON_KEY,
+        'Authorization':'Bearer ' + this.token,
+        'Content-Type':'application/json',
+        'Prefer':'return=minimal'
+      },
+      body:JSON.stringify({data, updated_at:new Date().toISOString()})
+    }, 15000);
+  },
+
+  async save(data){
+    if(!CLOUD){
+      return Cache.write(LS_DATA, data) ? {ok:true} : {ok:false, full:true};
+    }
+    /* keep a local copy first, so a failed upload never loses the work */
+    Cache.write(LS_DRAFT, data);
+    try{
+      let r = await this._patch(data);
+      if(r.status === 401 && await this.renew()) r = await this._patch(data);   // token expired
+      if(!r.ok) return {ok:false, status:r.status, auth:r.status === 401};
+      Cache.write(LS_CACHE, data);
+      Cache.drop(LS_DRAFT);
+      return {ok:true};
+    }catch(e){
+      return {ok:false, offline:true};
+    }
+  },
+
+  /* photos go to Storage, not into the row every visitor downloads */
+  async upload(slotName, blob){
+    const path = `${slotName}-${Date.now()}.jpg`;
+    const r = await req(`${CONFIG.SUPABASE_URL}/storage/v1/object/${CONFIG.BUCKET}/${path}`,{
+      method:'POST',
+      headers:{
+        'apikey':CONFIG.SUPABASE_ANON_KEY,
+        'Authorization':'Bearer ' + this.token,
+        'Content-Type':'image/jpeg',
+        'x-upsert':'true'
+      },
+      body: blob
+    }, 30000);
+    if(r.status === 401 && await this.renew()) return this.upload(slotName, blob);
+    if(!r.ok) throw new Error('upload failed: ' + r.status);
+    return `${CONFIG.SUPABASE_URL}/storage/v1/object/public/${CONFIG.BUCKET}/${path}`;
+  }
+};
+
+/* ---------- 4. STATE ------------------------------------------- */
+const clone = o => JSON.parse(JSON.stringify(o));
+const freshText = () => { const t={}; for(const k in CONTENT) t[k]=[CONTENT[k][0],CONTENT[k][1]]; return t; };
+
+let STATE = { lang:'ar', text:freshText(), images:{}, order:[], hidden:[] };
+let LANG = 0;                 // 0 = ar, 1 = en
+let admin = false, dirty = false;
+const undoStack = [];
+
+const t  = k => (UI[k] ? UI[k][LANG] : k);
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+/* ---------- 5. RENDER ------------------------------------------ */
+/* chrome is optional — never let a missing control stop the page rendering */
+const set = (sel, prop, val) => { const el = $(sel); if(el) el[prop] = val; };
+
+function applyLang(){
+  const ar = LANG === 0;
+  document.documentElement.lang = ar ? 'ar' : 'en';
+  document.documentElement.dir  = ar ? 'rtl' : 'ltr';
+  set('#langOn','textContent',  ar ? 'ع' : 'EN');
+  set('#langOff','textContent', ar ? 'EN' : 'ع');
+  $$('#abLang button').forEach(b => b.classList.toggle('on', (b.dataset.setlang==='ar') === ar));
+
+  $$('[data-edit]').forEach(el=>{
+    const v = STATE.text[el.dataset.edit];
+    if(v) el.textContent = v[LANG];
   });
-});
+  $$('[data-ph]').forEach(el=>{
+    const v = STATE.text[el.dataset.ph];
+    if(v) el.placeholder = v[LANG];
+  });
+  $$('[data-i18n]').forEach(el=>{ el.textContent = t(el.dataset.i18n); });
+  $$('.slot').forEach(el=> el.dataset.uploadLabel = t('up.label'));
+  $$('.blk').forEach(el=> el.dataset.hiddenLabel = t('hidden.label'));
+  set('#modeNote','textContent', CLOUD ? t('note.cloud') : t('note.local'));
+  set('#btnUndo','title', t('undo'));
+  buildTicker();
+  refreshTools();
+}
 
-// ---------- image drop / upload for dropzones ----------
-function applyImage(dataUrl, zone){
-  let img = zone.querySelector('img');
-  if(!img){ img = document.createElement('img'); zone.insertBefore(img, zone.firstChild); }
-  img.src = dataUrl;
+const TICKER_KEYS = ['ticker.1','ticker.2','ticker.3','ticker.4','ticker.5','ticker.6','ticker.7'];
+
+function buildTicker(){
+  const track = $('#tickerTrack');
+  if(!track) return;
+  const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const val = k => esc((STATE.text[k] || ['',''])[LANG]);
+  /* first pass is editable; the second is the seamless-loop duplicate */
+  const live = TICKER_KEYS.map(k => `<span data-edit="${k}">${val(k)}</span>`).join('');
+  const copy = TICKER_KEYS.map(k => `<span aria-hidden="true">${val(k)}</span>`).join('');
+  track.innerHTML = live + copy;
+  if(admin) track.querySelectorAll('[data-edit]').forEach(el => el.setAttribute('contenteditable','true'));
 }
-function handleImageSelect(e, zone){
-  const file = e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ()=> applyImage(reader.result, zone);
-  reader.readAsDataURL(file);
+
+function applyImages(){
+  $$('.slot').forEach(slot=>{
+    const src = STATE.images[slot.dataset.slot];
+    let img = slot.querySelector('img');
+    if(src){
+      if(!img){
+        img = document.createElement('img');
+        img.loading = 'lazy'; img.decoding = 'async';
+        slot.insertBefore(img, slot.firstChild);
+      }
+      if(img.src !== src) img.src = src;
+      img.alt = '';
+      const ph = slot.querySelector('.ph'); if(ph) ph.style.display = 'none';
+    }else{
+      if(img) img.remove();
+      const ph = slot.querySelector('.ph'); if(ph) ph.style.display = '';
+    }
+  });
 }
-function handleImageDrop(e, zone){
-  e.preventDefault();
-  zone.classList.remove('drag-over');
-  const file = e.dataTransfer.files[0];
+
+function applyLayout(){
+  const main = $('main');
+  if(STATE.order && STATE.order.length){
+    STATE.order.forEach(id=>{
+      const el = main.querySelector(`[data-blk="${id}"]`);
+      if(el) main.appendChild(el);
+    });
+  }
+  $$('.blk').forEach(b=> b.classList.toggle('is-hidden', STATE.hidden.includes(b.dataset.blk)));
+}
+
+function currentOrder(){ return $$('main .blk').map(b => b.dataset.blk); }
+
+function renderAll(){ applyLang(); applyImages(); applyLayout(); }
+
+/* ---------- 6. EDITOR ------------------------------------------ */
+function setDirty(v){
+  dirty = v;
+  document.body.classList.toggle('is-dirty', v);
+  $('#btnSave').disabled = !v;
+}
+
+function pushUndo(){
+  undoStack.push(clone({text:STATE.text, images:STATE.images, order:currentOrder(), hidden:STATE.hidden}));
+  if(undoStack.length > 30) undoStack.shift();
+  $('#btnUndo').disabled = false;
+}
+
+function undo(){
+  const prev = undoStack.pop();
+  if(!prev) return;
+  STATE.text = prev.text; STATE.images = prev.images;
+  STATE.order = prev.order; STATE.hidden = prev.hidden;
+  renderAll();
+  setDirty(true);
+  $('#btnUndo').disabled = undoStack.length === 0;
+}
+
+function toast(msg, bad){
+  const el = $('#toast');
+  $('#toastMsg').textContent = msg;
+  el.classList.toggle('bad', !!bad);
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(()=> el.classList.remove('show'), 3200);
+}
+
+/* --- text editing ---
+   Delegated, so text rebuilt at runtime (the ticker) is editable too. */
+const hit = (e) => (e.target && e.target.closest) ? e.target.closest('[data-edit]') : null;
+
+function bindText(){
+  document.addEventListener('focusin', e=>{
+    const el = hit(e); if(el) el._before = el.textContent;
+  });
+
+  document.addEventListener('focusout', e=>{
+    const el = hit(e);
+    if(!el || !admin) return;
+    const val = el.textContent.replace(/\s+/g,' ').trim();
+    const key = el.dataset.edit;
+    if(el._before !== undefined && el._before.trim() === val) return;
+    pushUndo();
+    if(!STATE.text[key]) STATE.text[key] = ['',''];
+    STATE.text[key][LANG] = val;
+    el.textContent = val;
+    if(key.indexOf('ticker.') === 0) buildTicker();   // keep the loop copy in step
+    setDirty(true);
+    autoTranslate(key, val);                          // mirror into the other language
+  });
+
+  document.addEventListener('keydown', e=>{
+    const el = hit(e); if(!el || !admin) return;
+    if(e.key === 'Enter' && el.tagName !== 'P'){ e.preventDefault(); el.blur(); }
+    if(e.key === 'Escape'){ el.textContent = el._before; el.blur(); }
+  });
+
+  /* paste as plain text so pasted styling can never break the design */
+  document.addEventListener('paste', e=>{
+    const el = hit(e); if(!el || !admin) return;
+    e.preventDefault();
+    const txt = (e.clipboardData || window.clipboardData).getData('text');
+    document.execCommand('insertText', false, txt.replace(/\s+/g,' '));
+  });
+
+  /* links stay editable instead of navigating while in edit mode */
+  document.addEventListener('click', e=>{
+    const el = hit(e);
+    if(admin && el && el.closest('a')) e.preventDefault();
+  });
+}
+
+/* ---------- TRANSLATION ----------------------------------------
+   Runs only in the editor, never on a visitor's page load — so a slow
+   or unavailable translator can never affect the live site. Whatever it
+   produces is stored as ordinary text and stays fully editable.
+   Engine order: the browser's built-in on-device translator (free, no
+   key, works offline), then a free no-key web service, then give up
+   and leave the other language for the manager to write.
+   --------------------------------------------------------------- */
+const Translate = {
+  engines:{},
+
+  async engine(from, to){
+    if(typeof self === 'undefined' || !self.Translator || !self.Translator.create) return null;
+    const key = from + '>' + to;
+    if(this.engines[key] !== undefined) return this.engines[key];
+    this.engines[key] = null;
+    try{
+      const avail = self.Translator.availability
+        ? await self.Translator.availability({sourceLanguage:from, targetLanguage:to})
+        : 'available';
+      if(avail !== 'unavailable')
+        this.engines[key] = await self.Translator.create({sourceLanguage:from, targetLanguage:to});
+    }catch(e){ this.engines[key] = null; }
+    return this.engines[key];
+  },
+
+  async text(str, from, to){
+    if(!str || !str.trim()) return null;
+    if(str.trim().length > 900) return null;              // beyond the free service's limit
+    const eng = await this.engine(from, to);
+    if(eng){
+      try{ const out = await eng.translate(str); if(out && out.trim()) return out.trim(); }catch(e){}
+    }
+    try{
+      const r = await req('https://api.mymemory.translated.net/get?q=' +
+                          encodeURIComponent(str) + '&langpair=' + from + '|' + to, {}, 9000);
+      if(r.ok){
+        const j = await r.json();
+        const out = j && j.responseData && j.responseData.translatedText;
+        if(out && !/MYMEMORY WARNING|QUOTA EXCEEDED|INVALID/i.test(out)) return out.trim();
+      }
+    }catch(e){}
+    return null;
+  }
+};
+
+/* phones, times, percentages, emails and URLs are copied across untouched */
+const NOTRANSLATE = /^[\d\s+\-/:%.،,()]+$|@|^https?:|^www\./i;
+
+/* mirror an edit into the other language */
+let autoTr = true, trPending = 0;
+async function autoTranslate(key, val){
+  if(!autoTr || !admin || !val) return;
+  const from = LANG === 0 ? 'ar' : 'en';
+  const to   = LANG === 0 ? 'en' : 'ar';
+  const dst  = LANG === 0 ? 1 : 0;
+  if(!STATE.text[key]) STATE.text[key] = ['',''];
+  /* a new phone number or email still has to replace the old one in the other
+     language — mirror it across verbatim rather than skipping it */
+  if(NOTRANSLATE.test(val)){ STATE.text[key][dst] = val; setDirty(true); return; }
+  trPending++; showTrBusy();
+  const out = await Translate.text(val, from, to);
+  trPending--; showTrBusy();
+  if(!out) return;
+  STATE.text[key][dst] = out;
+  setDirty(true);
+}
+
+function showTrBusy(){
+  const b = $('#btnTr');
+  if(b) b.classList.toggle('working', trPending > 0);
+}
+
+/* fill in every counterpart still sitting at the factory wording */
+async function translateAll(){
+  const from = LANG === 0 ? 'ar' : 'en';
+  const to   = LANG === 0 ? 'en' : 'ar';
+  const src  = LANG, dst = LANG === 0 ? 1 : 0;
+  const todo = Object.keys(STATE.text).filter(k=>{
+    const cur = STATE.text[k], base = CONTENT[k];
+    if(!cur || !cur[src] || !cur[src].trim()) return false;
+    return base && cur[dst] === base[dst] && cur[src] !== base[src];   // source edited, target not
+  });
+  if(!todo.length){ toast(t('tr.none')); return; }
+  toast(t('tr.working'));
+  trPending++; showTrBusy();
+  let done = 0;
+  for(const k of todo){
+    const v = STATE.text[k][src];
+    if(NOTRANSLATE.test(v)){ STATE.text[k][dst] = v; done++; continue; }
+    const out = await Translate.text(v, from, to);
+    if(out){ STATE.text[k][dst] = out; done++; }
+  }
+  trPending--; showTrBusy();
+  if(done){ setDirty(true); renderAll(); }
+  toast(done ? t('tr.done').replace('{n}', done) : t('tr.fail'), !done);
+}
+
+/* --- images --- */
+/* returns { url, blob } — url for local mode, blob for a Storage upload */
+function compress(file, maxW, q){
+  return new Promise((resolve, reject)=>{
+    const fr = new FileReader();
+    fr.onload = ()=>{
+      const img = new Image();
+      img.onload = ()=>{
+        const scale = Math.min(1, maxW / img.width);
+        const c = document.createElement('canvas');
+        c.width  = Math.round(img.width  * scale);
+        c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        const url = c.toDataURL('image/jpeg', q);
+        if(c.toBlob){
+          c.toBlob(b => resolve({url, blob:b}), 'image/jpeg', q);
+        }else{
+          resolve({url, blob:dataUrlToBlob(url)});
+        }
+      };
+      img.onerror = reject;
+      img.src = fr.result;
+    };
+    fr.onerror = reject;
+    fr.readAsDataURL(file);
+  });
+}
+
+function dataUrlToBlob(dataUrl){
+  const [head, b64] = dataUrl.split(',');
+  const bin = atob(b64 || '');
+  const buf = new Uint8Array(bin.length);
+  for(let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+  return new Blob([buf], {type:(head.match(/:(.*?);/) || [,'image/jpeg'])[1]});
+}
+
+async function takeImage(file, slot){
   if(!file || !file.type.startsWith('image/')) return;
-  const reader = new FileReader();
-  reader.onload = ()=> applyImage(reader.result, zone);
-  reader.readAsDataURL(file);
+  const busy = document.createElement('div');
+  busy.className = 'busy'; busy.textContent = '···';
+  slot.appendChild(busy);
+  try{
+    const {url, blob} = await compress(file, 1600, .82);
+    let stored = url;
+    if(CLOUD && Store.token){
+      /* upload to Storage so the page's JSON stays tiny for every visitor.
+         if the upload fails, fall back to embedding it rather than losing it */
+      try{ stored = await Store.upload(slot.dataset.slot, blob); }
+      catch(e){ toast(t('warn.localimg'), true); }
+    }
+    pushUndo();
+    STATE.images[slot.dataset.slot] = stored;
+    applyImages();
+    setDirty(true);
+  }catch(e){ toast(t('err.save'), true); }
+  finally{ busy.remove(); }
 }
 
-// ---------- download current edited page ----------
-function downloadPage(){
-  const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-  const blob = new Blob([html], {type:'text/html'});
+function bindImages(){
+  const picker = document.createElement('input');
+  picker.type = 'file'; picker.accept = 'image/*'; picker.style.display = 'none';
+  document.body.appendChild(picker);
+  let target = null;
+  picker.addEventListener('change', ()=>{
+    if(target && picker.files[0]) takeImage(picker.files[0], target);
+    picker.value = '';
+  });
+
+  $$('.slot').forEach(slot=>{
+    slot.addEventListener('click', ()=>{ if(!admin) return; target = slot; picker.click(); });
+    slot.addEventListener('dragover', e=>{ if(!admin) return; e.preventDefault(); slot.classList.add('drag-over'); });
+    slot.addEventListener('dragleave', ()=> slot.classList.remove('drag-over'));
+    slot.addEventListener('drop', e=>{
+      if(!admin) return;
+      e.preventDefault(); e.stopPropagation();
+      slot.classList.remove('drag-over');
+      takeImage(e.dataTransfer.files[0], slot);
+    });
+  });
+  /* never let a stray drop navigate away from the page */
+  window.addEventListener('dragover', e=> e.preventDefault());
+  window.addEventListener('drop', e=> e.preventDefault());
+}
+
+/* --- section tools: drag, move, hide --- */
+function refreshTools(){
+  const blocks = $$('main .blk');
+  blocks.forEach((blk, i)=>{
+    const bar = blk.querySelector('[data-tools]');
+    if(!bar) return;
+    bar.innerHTML =
+      `<button type="button" class="grab" draggable="true" title="${t('t.drag')}">⠿</button>` +
+      `<button type="button" data-mv="-1" title="${t('t.up')}" ${i===0?'disabled':''}>↑</button>` +
+      `<button type="button" data-mv="1" title="${t('t.down')}" ${i===blocks.length-1?'disabled':''}>↓</button>` +
+      `<button type="button" data-hide title="${t('t.hide')}">${blk.classList.contains('is-hidden')?'◍':'◌'}</button>`;
+  });
+}
+
+function bindTools(){
+  const main = $('main');
+  let dragging = null;
+
+  main.addEventListener('click', e=>{
+    const mv = e.target.closest('[data-mv]');
+    const hd = e.target.closest('[data-hide]');
+    if(!mv && !hd) return;
+    const blk = e.target.closest('.blk');
+    pushUndo();
+    if(mv){
+      const dir = +mv.dataset.mv;
+      const sib = dir < 0 ? blk.previousElementSibling : blk.nextElementSibling;
+      if(sib) dir < 0 ? main.insertBefore(blk, sib) : main.insertBefore(sib, blk);
+      STATE.order = currentOrder();
+    }else{
+      const id = blk.dataset.blk;
+      const at = STATE.hidden.indexOf(id);
+      at === -1 ? STATE.hidden.push(id) : STATE.hidden.splice(at,1);
+      blk.classList.toggle('is-hidden');
+    }
+    refreshTools();
+    setDirty(true);
+    /* scroll last, and only if supported — it must never block the state update */
+    if(mv && blk.scrollIntoView) blk.scrollIntoView({block:'center', behavior:'smooth'});
+  });
+
+  main.addEventListener('dragstart', e=>{
+    const grab = e.target.closest('.grab');
+    if(!grab || !admin) return;
+    dragging = grab.closest('.blk');
+    dragging.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain','blk');
+  });
+
+  main.addEventListener('dragover', e=>{
+    if(!dragging) return;
+    e.preventDefault();
+    const over = e.target.closest('.blk');
+    $$('.blk').forEach(b=> b.classList.remove('drop-before','drop-after'));
+    if(!over || over === dragging) return;
+    const r = over.getBoundingClientRect();
+    over.classList.add((e.clientY - r.top) > r.height/2 ? 'drop-after' : 'drop-before');
+  });
+
+  main.addEventListener('drop', e=>{
+    if(!dragging) return;
+    e.preventDefault();
+    const over = e.target.closest('.blk');
+    if(over && over !== dragging){
+      const r = over.getBoundingClientRect();
+      const after = (e.clientY - r.top) > r.height/2;
+      pushUndo();
+      main.insertBefore(dragging, after ? over.nextSibling : over);
+      STATE.order = currentOrder();
+      setDirty(true);
+    }
+    $$('.blk').forEach(b=> b.classList.remove('drop-before','drop-after','dragging'));
+    dragging = null;
+    refreshTools();
+  });
+
+  main.addEventListener('dragend', ()=>{
+    $$('.blk').forEach(b=> b.classList.remove('drop-before','drop-after','dragging'));
+    dragging = null;
+  });
+}
+
+/* --- admin mode --- */
+function enterAdmin(){
+  admin = true;
+  document.body.classList.add('admin-on');
+  $$('[data-edit]').forEach(el=> el.setAttribute('contenteditable','true'));
+  setDirty(false);
+  $('#btnUndo').disabled = true;
+  refreshTools();
+}
+
+function exitAdmin(){
+  admin = false;
+  Store.signOut();
+  document.body.classList.remove('admin-on','is-dirty');
+  $$('[data-edit]').forEach(el=> el.removeAttribute('contenteditable'));
+  dirty = false;
+}
+
+async function doSave(){
+  STATE.order = currentOrder();
+  STATE.lang  = LANG === 0 ? 'ar' : 'en';
+  $('#btnSave').disabled = true;
+  const res = await Store.save({text:STATE.text, images:STATE.images, order:STATE.order, hidden:STATE.hidden});
+  if(res.ok){
+    setDirty(false);
+    toast(CLOUD ? t('ok.live') : t('ok.saved'));
+    return;
+  }
+  /* the edits are already written to the local draft — say so, and let them retry */
+  $('#btnSave').disabled = false;
+  toast(res.full     ? t('err.big')
+      : res.auth     ? t('err.auth')
+      : res.offline  ? t('err.offline')
+      :                t('err.save'), true);
+}
+
+function doReset(){
+  if(!confirm(t('ask.reset'))) return;
+  pushUndo();
+  STATE.text = freshText();
+  STATE.images = {};
+  STATE.hidden = [];
+  STATE.order = [];
+  renderAll();
+  setDirty(true);
+  toast(t('ok.reset'));
+}
+
+/* download a standalone copy with the current content baked in */
+function doExport(){
+  const seed = JSON.stringify({text:STATE.text, images:STATE.images, order:currentOrder(), hidden:STATE.hidden})
+                   .replace(/</g,'\\u003c');
+  const doc = document.documentElement.cloneNode(true);
+  /* clear transient edit state only — the admin bar and login stay in the file
+     so the downloaded copy can still be managed after it is uploaded */
+  doc.querySelectorAll('[contenteditable]').forEach(el=> el.removeAttribute('contenteditable'));
+  doc.querySelectorAll('[data-tools]').forEach(el=> el.innerHTML = '');
+  doc.querySelectorAll('.overlay').forEach(el=> el.classList.remove('open'));
+  doc.querySelectorAll('.toast').forEach(el=> el.classList.remove('show','bad'));
+  doc.querySelectorAll('.err').forEach(el=> el.classList.remove('show'));
+  doc.querySelector('body').className = '';
+  doc.querySelector('#seed')?.remove();          // never stack seeds when re-exporting
+  const s = document.createElement('script');
+  s.id = 'seed';
+  s.textContent = 'window.__SEED__=' + seed + ';';
+  doc.querySelector('head').appendChild(s);
+
+  const blob = new Blob(['<!DOCTYPE html>\n' + doc.outerHTML], {type:'text/html;charset=utf-8'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'حلم-وهدف-صفحة-الهبوط.html';
+  a.download = 'holm-wahadaf.html';
   a.click();
+  setTimeout(()=> URL.revokeObjectURL(a.href), 1000);
 }
+
+/* --- login --- */
+function openLogin(){ $('#loginOverlay').classList.add('open'); setTimeout(()=> $('#l-user').focus(), 60); }
+function closeLogin(){ $('#loginOverlay').classList.remove('open'); $('#loginErr').classList.remove('show'); }
+
+/* --- reveal on scroll --- */
+function bindReveal(){
+  const sel = '.sec-head, .hero-grid > *, .stat, .svc-row, .about-grid > *, .why-card, .step, .gal .cell, .contact-grid > *';
+  const els = $$(sel);
+  els.forEach(el=> el.classList.add('rv'));
+  if(!('IntersectionObserver' in window)){ els.forEach(el=> el.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((en, i)=>{
+      if(!en.isIntersecting) return;
+      const sibs = Array.from(en.target.parentElement.children).indexOf(en.target);
+      en.target.style.transitionDelay = Math.min(sibs, 6) * 55 + 'ms';
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px', threshold:.08});
+  els.forEach(el=> io.observe(el));
+}
+
+/* ---------- BOOT ----------------------------------------------- */
+(async function boot(){
+  $('#yr').textContent = new Date().getFullYear();
+
+  function absorb(saved){
+    if(!saved) return false;
+    if(saved.text)   Object.keys(saved.text).forEach(k=>{ STATE.text[k] = saved.text[k]; });
+    if(saved.images) STATE.images = saved.images;
+    if(saved.order)  STATE.order  = saved.order;
+    if(saved.hidden) STATE.hidden = saved.hidden;
+    return true;
+  }
+
+  /* Render from whatever is already on this device — exported seed, the last
+     copy read from the cloud, or a local save. The network is never waited on,
+     so the page is complete and correct even if Supabase is asleep. */
+  absorb(window.__SEED__ || (CLOUD ? Store.cached() : Cache.read(LS_DATA)));
+
+  const stored = localStorage.getItem('hw.lang');
+  LANG = stored === 'en' ? 1 : 0;
+  autoTr = localStorage.getItem('hw.autotr') !== '0';
+
+  renderAll();
+  bindText(); bindImages(); bindTools(); bindReveal();
+
+  /* Then catch up with the cloud in the background and re-render if it differs.
+     Skipped while the manager is editing so it can never overwrite their work. */
+  if(CLOUD && !window.__SEED__){
+    Store.load().then(remote=>{
+      if(!remote || admin || dirty) return;
+      const before = JSON.stringify([STATE.text, STATE.images, STATE.order, STATE.hidden]);
+      absorb(remote);
+      if(JSON.stringify([STATE.text, STATE.images, STATE.order, STATE.hidden]) !== before) renderAll();
+    });
+  }
+
+  /* language switches */
+  $('#langToggle').addEventListener('click', ()=>{
+    LANG = LANG ? 0 : 1;
+    localStorage.setItem('hw.lang', LANG ? 'en' : 'ar');
+    applyLang();
+  });
+  $$('#abLang button').forEach(b=> b.addEventListener('click', ()=>{
+    LANG = b.dataset.setlang === 'en' ? 1 : 0;
+    localStorage.setItem('hw.lang', LANG ? 'en' : 'ar');
+    applyLang();
+  }));
+
+  /* login */
+  $('#loginBtn').addEventListener('click', openLogin);
+  $$('#loginOverlay [data-close]').forEach(b=> b.addEventListener('click', closeLogin));
+  $('#loginOverlay').addEventListener('click', e=>{ if(e.target.id === 'loginOverlay') closeLogin(); });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLogin(); });
+
+  $('#loginForm').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const btn = $('#loginSubmit');
+    btn.disabled = true;
+    const ok = await Store.signIn($('#l-user').value, $('#l-pass').value);
+    btn.disabled = false;
+    if(ok){
+      closeLogin();
+      $('#loginForm').reset();
+      enterAdmin();
+      recoverDraft();
+    }else{
+      const err = $('#loginErr');
+      err.textContent = t('err.creds');
+      err.classList.add('show');
+    }
+  });
+
+  /* admin bar */
+  $('#btnSave').addEventListener('click', doSave);
+  $('#btnReset').addEventListener('click', doReset);
+  $('#btnExport').addEventListener('click', doExport);
+  $('#btnUndo').addEventListener('click', undo);
+  $('#btnTrAll').addEventListener('click', translateAll);
+  $('#btnTr').classList.toggle('on', autoTr);
+  $('#btnTr').addEventListener('click', ()=>{
+    autoTr = !autoTr;
+    $('#btnTr').classList.toggle('on', autoTr);
+    try{ localStorage.setItem('hw.autotr', autoTr ? '1' : '0'); }catch(e){}
+    toast(autoTr ? t('tr.on') : t('tr.off'));
+  });
+  $('#btnLogout').addEventListener('click', ()=>{
+    if(dirty && !confirm(t('ask.leave'))) return;
+    exitAdmin();
+  });
+
+  document.addEventListener('keydown', e=>{
+    if(admin && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's'){ e.preventDefault(); if(dirty) doSave(); }
+    if(admin && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z'){ e.preventDefault(); undo(); }
+  });
+
+  window.addEventListener('beforeunload', e=>{
+    if(admin && dirty){ e.preventDefault(); e.returnValue = ''; }
+  });
+
+  /* a save that never reached the cloud is picked up at the next sign-in */
+  function recoverDraft(){
+    const draft = Cache.read(LS_DRAFT);
+    if(!draft || !draft.text) return;
+    absorb(draft);
+    renderAll();
+    setDirty(true);
+    toast(t('info.draft'));
+  }
+
+  /* an already-signed-in manager stays signed in on refresh */
+  if(Store.restoreSession()){ enterAdmin(); recoverDraft(); }
+
+  /* contact form — swap the alert for your endpoint when ready */
+  $('#leadForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const f = e.target;
+    /* query by id — form.name would resolve to the form's own name property */
+    if(!f.querySelector('#f-name').value.trim() || !f.querySelector('#f-phone').value.trim()){
+      toast(t('err.form'), true); return;
+    }
+    toast(t('ok.sent'));
+    f.reset();
+  });
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "holm-wahadaf-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smoke tests for the Holm Wahadaf landing page. Run: npm install && npm test",
+  "scripts": {
+    "test": "node val.js && node smoke.js && node smoke2.js && node cloud.js && node translate.js",
+    "check": "node val.js",
+    "editor": "node smoke.js",
+    "media": "node smoke2.js",
+    "cloud": "node cloud.js",
+    "translate": "node translate.js"
+  },
+  "dependencies": {
+    "jsdom": "^27.0.0"
+  }
+}
