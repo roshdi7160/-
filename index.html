@@ -467,7 +467,13 @@ body.admin-on .blk.is-hidden::after{
 
 /* image slots */
 .slot{position:absolute;inset:0;overflow:hidden;background:var(--paper-2);}
-.slot img{width:100%;height:100%;object-fit:cover;}
+.slot img{
+  width:100%;height:100%;display:block;
+  object-fit:var(--fit,cover);
+  object-position:var(--px,50%) var(--py,50%);
+  transform:scale(var(--z,1));
+  transform-origin:var(--px,50%) var(--py,50%);
+}
 .slot .ph{
   position:absolute;inset:0;display:grid;place-items:center;color:var(--paper-3);
   background:
@@ -488,6 +494,75 @@ body.admin-on .slot:hover::after{opacity:1;}
   position:absolute;inset:0;z-index:8;display:grid;place-items:center;
   background:rgba(19,18,16,.72);color:var(--paper);font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;
 }
+
+/* --- header logo slot --------------------------------------- */
+.brand .slot-logo{
+  position:relative;inset:auto;flex-shrink:0;
+  height:40px;min-width:34px;background:transparent;overflow:visible;
+  display:flex;align-items:center;
+}
+.brand .slot-logo img{
+  width:auto;height:40px;max-width:200px;object-fit:contain;
+  transform:scale(var(--z,1));transform-origin:center;
+}
+body.admin-on .brand .slot-logo::after{display:none;}
+body.admin-on .brand .slot-logo{outline:1px dashed rgba(229,72,31,.55);outline-offset:3px;}
+
+/* --- image adjust: per-slot button + shared panel ------------- */
+.fxbtn{
+  position:absolute;top:8px;inset-inline-start:8px;z-index:9;display:none;
+  width:26px;height:26px;place-items:center;cursor:pointer;
+  background:rgba(19,18,16,.82);color:var(--paper);border:0;
+  font-size:13px;line-height:1;padding:0;
+}
+.fxbtn:hover{background:var(--signal);}
+body.admin-on .slot.has-img > .fxbtn{display:grid;}
+body.admin-on .brand .slot-logo > .fxbtn{top:-6px;inset-inline-start:-6px;width:20px;height:20px;font-size:11px;}
+.slot.fx-on{outline:2px solid var(--signal);outline-offset:-2px;}
+.slot.fx-on::after{display:none !important;}
+body.admin-on .slot.fx-on{cursor:move;}
+
+.fxpanel{
+  position:fixed;z-index:250;width:236px;background:var(--ink);color:var(--paper);
+  padding:12px 13px 11px;font-size:12px;box-shadow:0 14px 40px rgba(19,18,16,.4);
+}
+.fxpanel[hidden]{display:none;}
+.fxrow{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.fxrow:last-child{margin-bottom:0;}
+.fxhead{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;}
+html[dir="rtl"] .fxhead{font-family:var(--f-ar);letter-spacing:0;font-size:11.5px;}
+.fxhead button{margin-inline-start:auto;background:none;border:0;color:var(--paper);cursor:pointer;font-size:17px;line-height:1;padding:0 2px;opacity:.7;}
+.fxhead button:hover{opacity:1;color:var(--signal);}
+.fxlab{flex-shrink:0;width:56px;opacity:.72;}
+.fxseg{display:flex;flex:1;border:1px solid rgba(242,239,231,.28);}
+.fxseg button{
+  flex:1;background:none;border:0;color:var(--paper);cursor:pointer;
+  padding:6px 4px;font-size:11.5px;font-family:inherit;
+}
+.fxseg button.on{background:var(--signal);}
+.fxpanel input[type=range]{flex:1;min-width:0;accent-color:var(--signal);height:18px;cursor:pointer;}
+.fxpanel output{
+  flex-shrink:0;width:42px;text-align:end;font-family:var(--f-mono);font-size:11px;opacity:.85;
+}
+.fxpad{
+  flex:1;height:62px;position:relative;cursor:crosshair;
+  border:1px solid rgba(242,239,231,.28);
+  background:
+    linear-gradient(rgba(242,239,231,.16) 1px,transparent 1px) 0 50%/100% 50%,
+    linear-gradient(90deg,rgba(242,239,231,.16) 1px,transparent 1px) 50% 0/50% 100%;
+}
+.fxdot{
+  position:absolute;width:11px;height:11px;background:var(--signal);
+  transform:translate(-50%,-50%);pointer-events:none;
+}
+.fxfoot{gap:8px;}
+.fxhint{flex:1;font-size:10.5px;line-height:1.45;opacity:.6;}
+.fxpanel .fxact{
+  background:none;border:1px solid rgba(242,239,231,.3);color:var(--paper);
+  cursor:pointer;padding:6px 9px;font-size:11px;font-family:inherit;flex-shrink:0;
+}
+.fxpanel .fxact:hover{background:var(--signal);border-color:var(--signal);}
+@media(max-width:520px){.fxpanel{width:calc(100vw - 24px);}}
 
 /* ============================================================
    MODAL (login / settings)
@@ -542,7 +617,7 @@ html[dir="rtl"] .mode-note{font-family:var(--f-ar);letter-spacing:0;font-size:12
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
 body.admin-on .rv{opacity:1;transform:none;}
 
-@media print{.adminbar,.overlay,.toast,.blk-tools,.login-dot{display:none !important;}}
+@media print{.adminbar,.overlay,.toast,.blk-tools,.login-dot,.fxpanel,.fxbtn{display:none !important;}}
 </style>
 </head>
 <body>
@@ -552,7 +627,7 @@ body.admin-on .rv{opacity:1;transform:none;}
      ============================================================ -->
 <div class="adminbar" id="adminbar">
   <span class="ab-brand"><span class="dot-dirty" id="dirtyDot"></span><span data-i18n="ab.brand">وضع التحرير</span></span>
-  <span class="ab-hint" data-i18n="ab.hint">انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها</span>
+  <span class="ab-hint" data-i18n="ab.hint">انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها · ⤢ لضبط حجمها</span>
   <div class="ab-lang" id="abLang">
     <button type="button" data-setlang="ar">ع</button>
     <button type="button" data-setlang="en">EN</button>
@@ -574,7 +649,9 @@ body.admin-on .rv{opacity:1;transform:none;}
 <header class="site-header">
   <div class="shell hdr">
     <a href="#top" class="brand">
-      <span class="mark" data-edit="brand.mark">حه</span>
+      <span class="slot slot-logo" data-slot="logo" data-fx="zoom" data-upload-label="شعار الشركة">
+        <span class="mark slot-fallback" data-edit="brand.mark">حه</span>
+      </span>
       <span data-edit="brand.name">حلم وهدف</span>
     </a>
     <nav class="nav">
@@ -948,6 +1025,37 @@ body.admin-on .rv{opacity:1;transform:none;}
 
 <div class="toast" id="toast"><span id="toastMsg"></span></div>
 
+<!-- ============================================================
+     IMAGE ADJUST PANEL — admin only, anchored to the active slot
+     ============================================================ -->
+<div class="fxpanel" id="fxPanel" hidden>
+  <div class="fxrow fxhead">
+    <span data-i18n="fx.title">الصورة</span>
+    <button type="button" id="fxClose" aria-label="close">×</button>
+  </div>
+  <div class="fxrow" id="fxFitRow">
+    <span class="fxlab" data-i18n="fx.fit">الملاءمة</span>
+    <div class="fxseg">
+      <button type="button" data-fit="cover"   data-i18n="fx.cover">ملء الإطار</button>
+      <button type="button" data-fit="contain" data-i18n="fx.contain">كاملة</button>
+    </div>
+  </div>
+  <div class="fxrow">
+    <span class="fxlab" data-i18n="fx.zoom">الحجم</span>
+    <input type="range" id="fxZoom" min="0.3" max="3" step="0.01" value="1">
+    <output id="fxZoomVal">100%</output>
+  </div>
+  <div class="fxrow" id="fxPosRow">
+    <span class="fxlab" data-i18n="fx.pos">الموضع</span>
+    <div class="fxpad" id="fxPad"><span class="fxdot" id="fxDot"></span></div>
+  </div>
+  <div class="fxrow fxfoot">
+    <button type="button" class="fxact" id="fxReplace" data-i18n="fx.replace">تغيير الصورة</button>
+    <button type="button" class="fxact" id="fxReset" data-i18n="fx.reset">إعادة الضبط</button>
+  </div>
+  <div class="fxrow"><span class="fxhint" id="fxHint">اسحب الصورة داخل الإطار لتحريكها</span></div>
+</div>
+
 <script>
 /* ================================================================
    حلم وهدف — page engine
@@ -1102,7 +1210,7 @@ const CONTENT = {
 /* interface strings — not editable by the manager */
 const UI = {
   'ab.brand':['وضع التحرير','EDIT MODE'],
-  'ab.hint':['انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها','Click any text to edit · drag ⠿ to reorder · click any image to replace'],
+  'ab.hint':['انقر على أي نص لتعديله · اسحب ⠿ لترتيب الأقسام · انقر على أي صورة لتغييرها · ⤢ لضبط حجمها','Click any text to edit · drag ⠿ to reorder · click any image to replace · ⤢ to size it'],
   'ab.reset':['استرجاع الأصل','Reset'],
   'ab.tr':['ترجمة تلقائية','Auto-translate'],
   'ab.trall':['ترجم الباقي','Translate rest'],
@@ -1144,6 +1252,18 @@ const UI = {
   't.down':['تحريك لأسفل','Move down'],
   't.hide':['إخفاء / إظهار القسم','Hide / show section'],
   't.drag':['اسحب لإعادة الترتيب','Drag to reorder'],
+  't.fx':['ضبط حجم الصورة وموضعها','Adjust image size and position'],
+  'up.logo':['انقر أو أفلت شعار الشركة','Click or drop your logo here'],
+  'fx.title':['ضبط الصورة','Adjust image'],
+  'fx.fit':['الملاءمة','Fit'],
+  'fx.cover':['ملء الإطار','Fill'],
+  'fx.contain':['كاملة','Whole'],
+  'fx.zoom':['الحجم','Size'],
+  'fx.pos':['الموضع','Position'],
+  'fx.replace':['تغيير الصورة','Replace'],
+  'fx.reset':['إعادة الضبط','Reset'],
+  'fx.hint':['اسحب الصورة داخل الإطار لتحريكها، أو استخدم مربع الموضع','Drag the image inside its frame to move it, or use the position pad'],
+  'fx.hintlogo':['اسحب المؤشر حتى يصبح حجم الشعار مناسبًا','Use the slider until the logo sits at the right size'],
   'undo':['تراجع','Undo']
 };
 
@@ -1291,7 +1411,16 @@ const Store = {
 const clone = o => JSON.parse(JSON.stringify(o));
 const freshText = () => { const t={}; for(const k in CONTENT) t[k]=[CONTENT[k][0],CONTENT[k][1]]; return t; };
 
-let STATE = { lang:'ar', text:freshText(), images:{}, order:[], hidden:[] };
+let STATE = { lang:'ar', text:freshText(), images:{}, imgfx:{}, order:[], hidden:[] };
+
+/* per-image framing. cover = fill the frame and crop; contain = show it whole.
+   zoom scales around the focal point, x/y are that point in percent. */
+const FX_DEFAULT = {fit:'cover',   zoom:1, x:50, y:50};
+const FX_LOGO    = {fit:'contain', zoom:1, x:50, y:50};
+const fxBase  = name => (name === 'logo' ? FX_LOGO : FX_DEFAULT);
+const fxOf    = name => Object.assign({}, fxBase(name), STATE.imgfx[name] || {});
+const fxIsDefault = name => { const b = fxBase(name), f = fxOf(name);
+  return f.fit === b.fit && f.zoom === b.zoom && f.x === b.x && f.y === b.y; };
 let LANG = 0;                 // 0 = ar, 1 = en
 let admin = false, dirty = false;
 const undoStack = [];
@@ -1321,12 +1450,14 @@ function applyLang(){
     if(v) el.placeholder = v[LANG];
   });
   $$('[data-i18n]').forEach(el=>{ el.textContent = t(el.dataset.i18n); });
-  $$('.slot').forEach(el=> el.dataset.uploadLabel = t('up.label'));
+  $$('.slot').forEach(el=> el.dataset.uploadLabel = t(el.dataset.slot === 'logo' ? 'up.logo' : 'up.label'));
+  $$('.fxbtn').forEach(el=> el.title = t('t.fx'));
   $$('.blk').forEach(el=> el.dataset.hiddenLabel = t('hidden.label'));
   set('#modeNote','textContent', CLOUD ? t('note.cloud') : t('note.local'));
   set('#btnUndo','title', t('undo'));
   buildTicker();
   refreshTools();
+  syncFx();
 }
 
 const TICKER_KEYS = ['ticker.1','ticker.2','ticker.3','ticker.4','ticker.5','ticker.6','ticker.7'];
@@ -1345,7 +1476,8 @@ function buildTicker(){
 
 function applyImages(){
   $$('.slot').forEach(slot=>{
-    const src = STATE.images[slot.dataset.slot];
+    const name = slot.dataset.slot;
+    const src  = STATE.images[name];
     let img = slot.querySelector('img');
     if(src){
       if(!img){
@@ -1355,12 +1487,19 @@ function applyImages(){
       }
       if(img.src !== src) img.src = src;
       img.alt = '';
-      const ph = slot.querySelector('.ph'); if(ph) ph.style.display = 'none';
-    }else{
-      if(img) img.remove();
-      const ph = slot.querySelector('.ph'); if(ph) ph.style.display = '';
+      const fx = fxOf(name);
+      img.style.setProperty('--fit', fx.fit);
+      img.style.setProperty('--px', fx.x + '%');
+      img.style.setProperty('--py', fx.y + '%');
+      img.style.setProperty('--z',  fx.zoom);
+    }else if(img){
+      img.remove();
     }
+    slot.classList.toggle('has-img', !!src);
+    /* the placeholder art, or the brand mark behind the logo slot */
+    slot.querySelectorAll('.ph, .slot-fallback').forEach(el=>{ el.style.display = src ? 'none' : ''; });
   });
+  syncFx();
 }
 
 function applyLayout(){
@@ -1386,7 +1525,7 @@ function setDirty(v){
 }
 
 function pushUndo(){
-  undoStack.push(clone({text:STATE.text, images:STATE.images, order:currentOrder(), hidden:STATE.hidden}));
+  undoStack.push(clone({text:STATE.text, images:STATE.images, imgfx:STATE.imgfx, order:currentOrder(), hidden:STATE.hidden}));
   if(undoStack.length > 30) undoStack.shift();
   $('#btnUndo').disabled = false;
 }
@@ -1395,6 +1534,7 @@ function undo(){
   const prev = undoStack.pop();
   if(!prev) return;
   STATE.text = prev.text; STATE.images = prev.images;
+  STATE.imgfx = prev.imgfx || {};
   STATE.order = prev.order; STATE.hidden = prev.hidden;
   renderAll();
   setDirty(true);
@@ -1611,18 +1751,35 @@ async function takeImage(file, slot){
   finally{ busy.remove(); }
 }
 
+let picker = null, pickTarget = null;
+function openPicker(slot){ pickTarget = slot; picker.click(); }
+
 function bindImages(){
-  const picker = document.createElement('input');
+  picker = document.createElement('input');
   picker.type = 'file'; picker.accept = 'image/*'; picker.style.display = 'none';
   document.body.appendChild(picker);
-  let target = null;
   picker.addEventListener('change', ()=>{
-    if(target && picker.files[0]) takeImage(picker.files[0], target);
+    if(pickTarget && picker.files[0]) takeImage(picker.files[0], pickTarget);
     picker.value = '';
   });
 
   $$('.slot').forEach(slot=>{
-    slot.addEventListener('click', ()=>{ if(!admin) return; target = slot; picker.click(); });
+    const fxb = document.createElement('button');
+    fxb.type = 'button'; fxb.className = 'fxbtn'; fxb.textContent = '\u2922';
+    fxb.title = t('t.fx');
+    fxb.addEventListener('click', e=>{
+      if(!admin) return;
+      e.preventDefault(); e.stopPropagation();
+      fxOpen(slot === fxSlot ? null : slot);
+    });
+    slot.appendChild(fxb);
+
+    slot.addEventListener('click', e=>{
+      if(!admin) return;
+      e.preventDefault();                 /* the logo slot sits inside the brand link */
+      if(slot === fxSlot) return;         /* while adjusting, clicks pan instead of replacing */
+      openPicker(slot);
+    });
     slot.addEventListener('dragover', e=>{ if(!admin) return; e.preventDefault(); slot.classList.add('drag-over'); });
     slot.addEventListener('dragleave', ()=> slot.classList.remove('drag-over'));
     slot.addEventListener('drop', e=>{
@@ -1631,10 +1788,156 @@ function bindImages(){
       slot.classList.remove('drag-over');
       takeImage(e.dataTransfer.files[0], slot);
     });
+    bindPan(slot);
   });
   /* never let a stray drop navigate away from the page */
   window.addEventListener('dragover', e=> e.preventDefault());
   window.addEventListener('drop', e=> e.preventDefault());
+  bindFx();
+}
+
+/* --- image framing: fit, size, focal point ---------------------
+   One shared panel, anchored to whichever slot is being adjusted, so it is
+   never clipped by a small gallery cell or by the header. */
+let fxSlot = null;
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+
+function fxOpen(slot){
+  const panel = $('#fxPanel');
+  if(fxSlot) fxSlot.classList.remove('fx-on');
+  /* nothing to frame until a picture is actually in the slot */
+  fxSlot = (slot && STATE.images[slot.dataset.slot]) ? slot : null;
+  if(!fxSlot){ panel.hidden = true; return; }
+  fxSlot.classList.add('fx-on');
+  panel.hidden = false;
+  syncFx();
+  fxPlace();
+}
+
+function fxClose(){ fxOpen(null); }
+
+function fxPlace(){
+  const panel = $('#fxPanel');
+  if(!panel || panel.hidden || !fxSlot) return;
+  const r = fxSlot.getBoundingClientRect();
+  const w = panel.offsetWidth, h = panel.offsetHeight, gap = 10;
+  let left = r.right + gap;
+  if(left + w > innerWidth - 8) left = r.left - w - gap;              // flip to the other side
+  left = clamp(left, 8, Math.max(8, innerWidth - w - 8));
+  const top0 = document.body.classList.contains('admin-on') ? 62 : 8; // clear the admin bar
+  const top = clamp(r.top, top0, Math.max(top0, innerHeight - h - 8));
+  panel.style.left = left + 'px';
+  panel.style.top  = top + 'px';
+}
+
+/* mirror the active slot's framing into the controls */
+function syncFx(){
+  const panel = $('#fxPanel');
+  if(!panel || panel.hidden || !fxSlot) return;
+  const name = fxSlot.dataset.slot;
+  if(!STATE.images[name]){ fxClose(); return; }   // image was cleared under us
+  const fx = fxOf(name);
+  /* the logo is always shown whole at its own aspect, so only size applies */
+  const zoomOnly = fxSlot.dataset.fx === 'zoom';
+  $('#fxFitRow').style.display = zoomOnly ? 'none' : '';
+  $('#fxPosRow').style.display = zoomOnly ? 'none' : '';
+  $('#fxHint').textContent = t(zoomOnly ? 'fx.hintlogo' : 'fx.hint');
+  $$('#fxFitRow [data-fit]').forEach(b=> b.classList.toggle('on', b.dataset.fit === fx.fit));
+  $('#fxZoom').value = fx.zoom;
+  $('#fxZoomVal').textContent = Math.round(fx.zoom * 100) + '%';
+  $('#fxDot').style.left = fx.x + '%';
+  $('#fxDot').style.top  = fx.y + '%';
+}
+
+function setFx(patch){
+  if(!fxSlot) return;
+  const name = fxSlot.dataset.slot;
+  STATE.imgfx[name] = Object.assign({}, fxOf(name), patch);
+  if(fxIsDefault(name)) delete STATE.imgfx[name];   // keep the saved JSON free of no-ops
+  applyImages();
+  setDirty(true);
+}
+
+function bindPan(slot){
+  let id = null, sx = 0, sy = 0, ox = 50, oy = 50, moved = false;
+  slot.addEventListener('pointerdown', e=>{
+    if(!admin || slot !== fxSlot || slot.dataset.fx === 'zoom') return;
+    if(e.target.closest('.fxbtn')) return;
+    id = e.pointerId; sx = e.clientX; sy = e.clientY; moved = false;
+    const fx = fxOf(slot.dataset.slot); ox = fx.x; oy = fx.y;
+    try{ slot.setPointerCapture(id); }catch(err){}
+  });
+  slot.addEventListener('pointermove', e=>{
+    if(id === null || e.pointerId !== id) return;
+    const dx = e.clientX - sx, dy = e.clientY - sy;
+    if(!moved){
+      if(Math.abs(dx) + Math.abs(dy) < 3) return;   // a click, not a drag
+      moved = true; pushUndo();
+    }
+    const r = slot.getBoundingClientRect();
+    /* drag right and the picture follows: the focal point moves the other way */
+    setFx({
+      x: Math.round(clamp(ox - dx / r.width  * 100, 0, 100)),
+      y: Math.round(clamp(oy - dy / r.height * 100, 0, 100))
+    });
+  });
+  const end = e=>{
+    if(id === null || e.pointerId !== id) return;
+    try{ slot.releasePointerCapture(id); }catch(err){}
+    id = null;
+  };
+  slot.addEventListener('pointerup', end);
+  slot.addEventListener('pointercancel', end);
+}
+
+function bindFx(){
+  const pad = $('#fxPad'), zoom = $('#fxZoom');
+
+  $('#fxClose').addEventListener('click', fxClose);
+  $('#fxReplace').addEventListener('click', ()=>{ if(fxSlot) openPicker(fxSlot); });
+
+  $$('#fxFitRow [data-fit]').forEach(b=>{
+    b.addEventListener('click', ()=>{ pushUndo(); setFx({fit:b.dataset.fit}); });
+  });
+
+  /* one undo step per gesture, not per slider tick */
+  zoom.addEventListener('pointerdown', ()=> pushUndo());
+  zoom.addEventListener('keydown', ()=> pushUndo());
+  zoom.addEventListener('input', ()=> setFx({zoom:+zoom.value}));
+
+  const padSet = e=>{
+    const r = pad.getBoundingClientRect();
+    setFx({
+      x: Math.round(clamp((e.clientX - r.left) / r.width  * 100, 0, 100)),
+      y: Math.round(clamp((e.clientY - r.top)  / r.height * 100, 0, 100))
+    });
+  };
+  let padOn = false;
+  pad.addEventListener('pointerdown', e=>{
+    padOn = true; pushUndo();
+    try{ pad.setPointerCapture(e.pointerId); }catch(err){}
+    padSet(e);
+  });
+  pad.addEventListener('pointermove', e=>{ if(padOn) padSet(e); });
+  const padEnd = e=>{
+    if(!padOn) return;
+    padOn = false;
+    try{ pad.releasePointerCapture(e.pointerId); }catch(err){}
+  };
+  pad.addEventListener('pointerup', padEnd);
+  pad.addEventListener('pointercancel', padEnd);
+
+  $('#fxReset').addEventListener('click', ()=>{
+    if(!fxSlot) return;
+    pushUndo();
+    delete STATE.imgfx[fxSlot.dataset.slot];
+    applyImages();
+    setDirty(true);
+  });
+
+  addEventListener('scroll', fxPlace, true);
+  addEventListener('resize', fxPlace);
+  addEventListener('keydown', e=>{ if(e.key === 'Escape' && fxSlot) fxClose(); });
 }
 
 /* --- section tools: drag, move, hide --- */
@@ -1732,6 +2035,7 @@ function enterAdmin(){
 
 function exitAdmin(){
   admin = false;
+  fxClose();
   Store.signOut();
   document.body.classList.remove('admin-on','is-dirty');
   $$('[data-edit]').forEach(el=> el.removeAttribute('contenteditable'));
@@ -1742,7 +2046,7 @@ async function doSave(){
   STATE.order = currentOrder();
   STATE.lang  = LANG === 0 ? 'ar' : 'en';
   $('#btnSave').disabled = true;
-  const res = await Store.save({text:STATE.text, images:STATE.images, order:STATE.order, hidden:STATE.hidden});
+  const res = await Store.save({text:STATE.text, images:STATE.images, imgfx:STATE.imgfx, order:STATE.order, hidden:STATE.hidden});
   if(res.ok){
     setDirty(false);
     toast(CLOUD ? t('ok.live') : t('ok.saved'));
@@ -1761,6 +2065,7 @@ function doReset(){
   pushUndo();
   STATE.text = freshText();
   STATE.images = {};
+  STATE.imgfx = {};
   STATE.hidden = [];
   STATE.order = [];
   renderAll();
@@ -1770,7 +2075,7 @@ function doReset(){
 
 /* download a standalone copy with the current content baked in */
 function doExport(){
-  const seed = JSON.stringify({text:STATE.text, images:STATE.images, order:currentOrder(), hidden:STATE.hidden})
+  const seed = JSON.stringify({text:STATE.text, images:STATE.images, imgfx:STATE.imgfx, order:currentOrder(), hidden:STATE.hidden})
                    .replace(/</g,'\\u003c');
   const doc = document.documentElement.cloneNode(true);
   /* clear transient edit state only — the admin bar and login stay in the file
@@ -1778,6 +2083,8 @@ function doExport(){
   doc.querySelectorAll('[contenteditable]').forEach(el=> el.removeAttribute('contenteditable'));
   doc.querySelectorAll('[data-tools]').forEach(el=> el.innerHTML = '');
   doc.querySelectorAll('.overlay').forEach(el=> el.classList.remove('open'));
+  doc.querySelectorAll('.fxpanel').forEach(el=> el.setAttribute('hidden',''));
+  doc.querySelectorAll('.slot').forEach(el=> el.classList.remove('fx-on','drag-over'));
   doc.querySelectorAll('.toast').forEach(el=> el.classList.remove('show','bad'));
   doc.querySelectorAll('.err').forEach(el=> el.classList.remove('show'));
   doc.querySelector('body').className = '';
@@ -1825,6 +2132,7 @@ function bindReveal(){
     if(!saved) return false;
     if(saved.text)   Object.keys(saved.text).forEach(k=>{ STATE.text[k] = saved.text[k]; });
     if(saved.images) STATE.images = saved.images;
+    if(saved.imgfx)  STATE.imgfx  = saved.imgfx;
     if(saved.order)  STATE.order  = saved.order;
     if(saved.hidden) STATE.hidden = saved.hidden;
     return true;
@@ -1847,9 +2155,9 @@ function bindReveal(){
   if(CLOUD && !window.__SEED__){
     Store.load().then(remote=>{
       if(!remote || admin || dirty) return;
-      const before = JSON.stringify([STATE.text, STATE.images, STATE.order, STATE.hidden]);
+      const before = JSON.stringify([STATE.text, STATE.images, STATE.imgfx, STATE.order, STATE.hidden]);
       absorb(remote);
-      if(JSON.stringify([STATE.text, STATE.images, STATE.order, STATE.hidden]) !== before) renderAll();
+      if(JSON.stringify([STATE.text, STATE.images, STATE.imgfx, STATE.order, STATE.hidden]) !== before) renderAll();
     });
   }
 

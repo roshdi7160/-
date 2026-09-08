@@ -23,6 +23,7 @@ Then:
 |---|---|
 | Change any text | Click it and type. Press `Esc` to cancel the edit. |
 | Change any image | Click the image, or drag a photo file onto it. |
+| Size / crop an image | Click the `⤢` button on the picture. See **Getting a picture to sit right** below. |
 | Reorder sections | Drag the `⠿` handle, or use the `↑` `↓` buttons. |
 | Hide a section | Click `◌` on that section. It greys out for you, and disappears for visitors. |
 | Undo | The `↺` button, or `Ctrl+Z`. |
@@ -31,6 +32,22 @@ Then:
 | Get a copy of the file | **تنزيل نسخة / Download** — see below. |
 
 Everything visible is editable, including the logo lettering and the scrolling strip under the hero.
+
+### Getting a picture to sit right
+
+Every picture, the logo included, has an `⤢` button in its top corner while you are signed in. Click it and a small panel opens beside that picture:
+
+| Control | What it does |
+|---|---|
+| **الملاءمة / Fit** | **ملء الإطار / Fill** stretches the picture to cover the whole frame and trims what overflows — right for photographs. **كاملة / Whole** shrinks it until all of it is visible, with space around it — right for logos, diagrams, anything with edges that must not be cut. |
+| **الحجم / Size** | 30% to 300%. Under 100% pulls the picture back inside its frame; over 100% pushes in closer. |
+| **الموضع / Position** | The small grid sets which part of the picture stays in view when it is cropped. You can also just **drag the picture itself** inside its frame. |
+| **تغيير الصورة / Replace** | Pick a different file, keeping the framing you have set. |
+| **إعادة الضبط / Reset** | Back to how the picture came in. |
+
+`Esc` closes the panel. Nothing is committed until you press **حفظ / Save**, and `Ctrl+Z` steps back through size and position changes like any other edit.
+
+The header logo only offers **Size** — it is always shown whole at its own proportions, so fit and position would do nothing. Until you upload one, the header keeps the حه lettering; upload a logo and it takes over, remove it and the lettering comes back.
 
 ### Languages translate themselves
 
